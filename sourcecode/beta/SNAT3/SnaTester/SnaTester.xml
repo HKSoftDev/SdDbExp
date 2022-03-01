@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SnaGui</name>
+    </assembly>
+    <members>
+        <member name="T:SnaGui.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:SnaGui.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:SnaGui.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:SnaGui.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:SnaGui.MainWindow.#ctor">
+            <summary>
+            The Main Window of the SdApi
+            </summary>
+        </member>
+        <member name="M:SnaGui.MainWindow.ButtonSend_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.ButtonStopServer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.CheckBoxUuid_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.CheckBoxUuid_Unchecked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.ComboBoxApi_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.RadioButtonActive_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.RadioButtonInactive_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.RadioButtonAll_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.CollectData">
+            <summary>
+            Collects data from <see cref="T:SnaGui.MainWindow"/> form.
+            </summary>
+        </member>
+        <member name="M:SnaGui.MainWindow.ResetGui">
+            <summary>
+            Resets <see cref="T:SnaGui.MainWindow"/> for new request.
+            </summary>
+        </member>
+        <member name="M:SnaGui.MainWindow.SetGuiDefault(System.Boolean)">
+            <remarks />
+        </member>
+        <member name="M:SnaGui.MainWindow.SetGuiGetSpecial(System.Boolean)">
+            <remarks />
+            <param name="moch"><see cref="T:System.Boolean"/></param>
+        </member>
+        <member name="M:SnaGui.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

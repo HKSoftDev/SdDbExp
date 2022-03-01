@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/build
+/installers/SdAccess
+/installers/SnaTester
+/sourcecode/alpha/SNAW3/.vs
+/sourcecode/alpha/SNAW3/SdAccess/obj
+/sourcecode/alpha/SNAW3/SdAccess/Debug
+/sourcecode/alpha/SNAW3/SdAccess/Release
+/sourcecode/beta/SNAT3/.vs
+/sourcecode/beta/SNAT3/SnaTester/obj
+/sourcecode/beta/SNAT3/SnaTester/Debug
+/sourcecode/beta/SNAT3/SnaTester/Release
+/sourcecode/beta/SNAT3/LogicTier/obj
+/sourcecode/beta/SNAT3/LogicTier/Debug
+/sourcecode/beta/SNAT3/LogicTier/Release
+/sourcecode/beta/SNAT3/Libs
+/sourcecode/beta/SNAT3/SnaTester64/Debug
+/sourcecode/beta/SNAT3/SnaTester64/Debug
