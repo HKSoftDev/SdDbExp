@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ActiveDebugProfile>SdDbAccess (Package)</ActiveDebugProfile>
+    <_LastSelectedProfileId>C:\Users\dibdbg\source\repos\SdDbExp\sourcecode\beta\SDA4\SdDbAccess\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <Source>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</Source>
+    <SmallTileSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</SmallTileSource>
+    <MediumTileSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</MediumTileSource>
+    <WideTileSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</WideTileSource>
+    <LargeTileSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</LargeTileSource>
+    <AppIconSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</AppIconSource>
+    <SplashScreenSource>C:\Users\dibdbg\source\repos\SdDbExp\sourcecode\beta\SDA4\SdDbAccess\splash-screen-4.0.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\dibdbg\OneDrive - Haderslev Kommune\Downloads\99725059.png</PackageLogoSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="App.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+</Project>

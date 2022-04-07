@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SdDbAccess (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SdDbAccess (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
