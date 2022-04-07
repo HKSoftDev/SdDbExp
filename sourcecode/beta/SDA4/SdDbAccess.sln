@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicTier", "LogicTier\LogicTier.csproj", "{3DA9B325-A4C0-4848-9061-F452CF87F76B}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SdDbAccess64", "SdDbAccess64\SdDbAccess64.vdproj", "{AF2794DD-6119-49CB-BCCB-586CD6486D42}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SdDbAccess", "SdDbAccess\SdDbAccess.csproj", "{3758F893-24F2-47F8-BA4E-19575BB63E4A}"
 EndProject
 Global
@@ -40,8 +38,6 @@ Global
 		{3DA9B325-A4C0-4848-9061-F452CF87F76B}.Debug|win10-x64.Build.0 = Debug|win10-x64
 		{3DA9B325-A4C0-4848-9061-F452CF87F76B}.Release|win10-x64.ActiveCfg = Release|win10-x64
 		{3DA9B325-A4C0-4848-9061-F452CF87F76B}.Release|win10-x64.Build.0 = Release|win10-x64
-		{AF2794DD-6119-49CB-BCCB-586CD6486D42}.Debug|win10-x64.ActiveCfg = Debug
-		{AF2794DD-6119-49CB-BCCB-586CD6486D42}.Release|win10-x64.ActiveCfg = Release
 		{3758F893-24F2-47F8-BA4E-19575BB63E4A}.Debug|win10-x64.ActiveCfg = Debug|x64
 		{3758F893-24F2-47F8-BA4E-19575BB63E4A}.Debug|win10-x64.Build.0 = Debug|x64
 		{3758F893-24F2-47F8-BA4E-19575BB63E4A}.Release|win10-x64.ActiveCfg = Release|x64
