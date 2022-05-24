@@ -10,8 +10,8 @@
 /installers/SnaTester
 /sourcecode/alpha/SdRestApi/.vs
 /sourcecode/alpha/SdRestApi/RestApi/obj
-/sourcecode/alpha/SdRestApi/RestApi/Debug
-/sourcecode/alpha/SdRestApi/RestApi/Release
+/sourcecode/alpha/SdRestApi/RestApi/bin/Debug
+/sourcecode/alpha/SdRestApi/RestApi/bin/Release
 /sourcecode/alpha/SdRestApi/LogicTier/obj
 /sourcecode/alpha/SdRestApi/LogicTier/Debug
 /sourcecode/alpha/SdRestApi/LogicTier/Release
