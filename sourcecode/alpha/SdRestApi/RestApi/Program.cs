@@ -1,15 +1,11 @@
+// -------------------------------------------------------------------------------------------------------------------------------
+// <copyright file="Bizz.Add.cs" company="Haderslev Kommune" author="Daniel Giversen" year="2022" reserved="All Rights" />
+// <license file="License.txt" "type=Proprietary License" />
+// -------------------------------------------------------------------------------------------------------------------------------
 using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
-using System.Reflection;
-using TaskApp.Behaviors;
-using TaskApp.Models;
-using TaskApp.Persistence;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -25,24 +21,16 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-builder.Services.AddScoped<ITaskItemRepositoty, TaskItemRepositoty>();
+builder.Services.AddScoped<ITaskItemRepository, TaskItemRepository>();
 
 
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new() { Title = "TaskApp", Version = "v1" });
-});
+builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new() { Title = "TaskApp", Version = "v1" }); });
 
 
-var app = builder.Build();
+WebApplication? app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (builder.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-    app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskApp v1"));
-}
+if (builder.Environment.IsDevelopment()) { app.UseDeveloperExceptionPage(); app.UseSwagger(); app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskApp v1")); }
 
 app.UseHttpsRedirection();
 

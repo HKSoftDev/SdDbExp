@@ -1304,6 +1304,39 @@
         <member name="M:LogicTier.Bizz.UpdateWorkingTimeNoCheck(Repository.WorkingTime@,System.String)">
             <summary>Updates <paramref name="entity"/></summary><param name="entity" /><param name="employment" /><returns>Result as bool</returns>
         </member>
+        <member name="T:LogicTier.CreateTaskCommand">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.CreateTaskCommand.Email">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.CreateTaskCommand.Name">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.CreateTaskCommand.DueDate">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.CreateTaskCommand.Priority">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.CreateTaskCommand.IsCompleted">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.CreateTaskCommandHandler">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.CreateTaskCommandHandler.#ctor(Repository.ITaskItemRepository,AutoMapper.IMapper)">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.CreateTaskCommandHandler.Handle(LogicTier.CreateTaskCommand,System.Threading.CancellationToken)">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.CreateTaskCommandValidatior">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.CreateTaskCommandValidatior.#ctor">
+            <remarks/>
+        </member>
         <member name="T:LogicTier.ExtensionMethods">
             <remarks />
         </member>
@@ -1318,6 +1351,36 @@
         </member>
         <member name="M:LogicTier.Garbage.Collect">
             <remarks />
+        </member>
+        <member name="T:LogicTier.GetAllTasksQuery">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.GetAllTasksQueryHandler">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.GetAllTasksQueryHandler.#ctor(Repository.ITaskItemRepository)">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.GetAllTasksQueryHandler.Handle(LogicTier.GetAllTasksQuery,System.Threading.CancellationToken)">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.IMapFrom`1">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.IMapFrom`1.Mapping(AutoMapper.Profile)">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.IMap`1">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.IMap`1.Mapping(AutoMapper.Profile)">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.MappingProfile">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.MappingProfile.#ctor">
+            <remarks/>
         </member>
         <member name="T:LogicTier.Resources">
             <summary>
@@ -1464,6 +1527,51 @@
         </member>
         <member name="P:LogicTier.StateObject.WorkSocket">
             <remarks />
+        </member>
+        <member name="T:LogicTier.TaskAppController">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.TaskAppController.Mediator">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.TaskAppController.#ctor(MediatR.IMediator)">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.TaskAppController.Get">
+            <summary>GET: api/{TaskAppController}</summary>
+        </member>
+        <member name="M:LogicTier.TaskAppController.Get(System.Int32)">
+            <summary>GET api/{TaskAppController}/5</summary>
+        </member>
+        <member name="M:LogicTier.TaskAppController.CreateTaskItem(LogicTier.CreateTaskCommand)">
+            <summary>POST api/{TaskAppController}</summary>
+        </member>
+        <member name="M:LogicTier.TaskAppController.Put(System.Int32,System.String)">
+            <summary>PUT api/{TaskAppController}/5</summary>
+        </member>
+        <member name="M:LogicTier.TaskAppController.Delete(System.Int32)">
+            <summary>DELETE api/{TaskAppController>}/5</summary>
+        </member>
+        <member name="T:LogicTier.ValidationBehaviour`2">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.ValidationBehaviour`2.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.IValidator{`0}})">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.ValidationBehaviour`2.Handle(`0,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate{`1})">
+            <remarks/>
+        </member>
+        <member name="T:LogicTier.ValidationException">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.ValidationException.Errors">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.ValidationException.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.ValidationException.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure})">
+            <remarks/>
         </member>
     </members>
 </doc>

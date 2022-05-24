@@ -1974,6 +1974,66 @@
         <member name="M:Repository.Institution.Validate">
             <summary>Validates data in this Institution</summary><exception cref="T:System.NullReferenceException" />
         </member>
+        <member name="T:Repository.ITaskItemRepository">
+            <remarks/>
+        </member>
+        <member name="M:Repository.ITaskItemRepository.GetTaskItemsAsync">
+            <remarks/>
+        </member>
+        <member name="M:Repository.ITaskItemRepository.GetTaskItemAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.ITaskItemRepository.InsertTaskAsync(Repository.TaskItem)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.ITaskItemRepository.UpdateTaskItemAsync(System.String,Repository.TaskItem)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.ITaskItemRepository.DeleteAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="T:Repository.TaskItemRepository">
+            <summary>This is a repository that has responsibility to handle CRUD operations no any flow logic here</summary>
+        </member>
+        <member name="M:Repository.TaskItemRepository.#ctor(Repository.IMongoDatabaseSettings)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.TaskItemRepository.GetTaskItemsAsync">
+            <remarks/>
+        </member>
+        <member name="M:Repository.TaskItemRepository.GetTaskItemAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.TaskItemRepository.InsertTaskAsync(Repository.TaskItem)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.TaskItemRepository.UpdateTaskItemAsync(System.String,Repository.TaskItem)">
+            <remarks/>
+        </member>
+        <member name="M:Repository.TaskItemRepository.DeleteAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="T:Repository.MongoDatabaseSettings">
+            <remarks/>
+        </member>
+        <member name="P:Repository.MongoDatabaseSettings.CollectionName">
+            <remarks/>
+        </member>
+        <member name="P:Repository.MongoDatabaseSettings.ConnectionString">
+            <remarks/>
+        </member>
+        <member name="P:Repository.MongoDatabaseSettings.DatabaseName">
+            <remarks/>
+        </member>
+        <member name="P:Repository.IMongoDatabaseSettings.CollectionName">
+            <remarks/>
+        </member>
+        <member name="P:Repository.IMongoDatabaseSettings.ConnectionString">
+            <remarks/>
+        </member>
+        <member name="P:Repository.IMongoDatabaseSettings.DatabaseName">
+            <remarks/>
+        </member>
         <member name="T:Repository.Organization">
             <remarks/>
         </member>
@@ -2701,6 +2761,27 @@
         </member>
         <member name="M:Repository.SuccessfulRun.ToString">
             <returns>Content of SuccessfulRun as a string</returns>
+        </member>
+        <member name="T:Repository.TaskItem">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.Id">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.Email">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.Name">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.DueDate">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.Priority">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TaskItem.IsCompleated">
+            <remarks/>
         </member>
         <member name="T:Repository.WorkingTime">
             <remarks />
