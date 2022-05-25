@@ -2783,6 +2783,18 @@
         <member name="P:Repository.TaskItem.IsCompleated">
             <remarks/>
         </member>
+        <member name="T:Repository.TodoItem">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItem.Id">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItem.Name">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItem.IsComplete">
+            <remarks/>
+        </member>
         <member name="T:Repository.WorkingTime">
             <remarks />
         </member>

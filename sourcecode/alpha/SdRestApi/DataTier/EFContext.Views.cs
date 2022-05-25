@@ -114,6 +114,9 @@ public partial class EFContext : DbContext // Views
 	/// <remarks />
 	public virtual DbSet<XmEmployment> ViewXmEmployments { get; set; } = null!;
 
+	/// <remarks />
+	public DbSet<TodoItem> TodoItems { get; set; } = null!;
+
 	#endregion
 
 }

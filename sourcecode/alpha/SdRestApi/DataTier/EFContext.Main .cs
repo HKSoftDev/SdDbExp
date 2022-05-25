@@ -12,9 +12,12 @@ public partial class EFContext : DbContext //Main
 	/// <remarks />
 	public EFContext() : base(RetrieveOptions()) { }
 
+	/// <remarks />
+	public EFContext(DbContextOptions<EFContext> options) : base(options) { }
+
 	#endregion
 
-	#region EventS
+	#region Events
 
 	/// <remarks />
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { if (!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer(Resources.ConnectionString); }

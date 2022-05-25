@@ -9,8 +9,8 @@
 /installers/SdDbAccess_client
 /installers/SnaTester
 /sourcecode/alpha/SdRestApi/.vs
-/sourcecode/alpha/SdRestApi/RestApi/obj
-/sourcecode/alpha/SdRestApi/RestApi/bin/
+/sourcecode/alpha/SdRestApi/WebApi/obj
+/sourcecode/alpha/SdRestApi/WebApi/bin/
 /sourcecode/alpha/SdRestApi/LogicTier/obj
 /sourcecode/alpha/SdRestApi/LogicTier/Debug
 /sourcecode/alpha/SdRestApi/LogicTier/Release

@@ -145,6 +145,9 @@
         <member name="M:DataTier.EFContext.#ctor">
             <remarks />
         </member>
+        <member name="M:DataTier.EFContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{DataTier.EFContext})">
+            <remarks />
+        </member>
         <member name="M:DataTier.EFContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <remarks />
         </member>
@@ -257,6 +260,9 @@
             <remarks />
         </member>
         <member name="P:DataTier.EFContext.ViewXmEmployments">
+            <remarks />
+        </member>
+        <member name="P:DataTier.EFContext.TodoItems">
             <remarks />
         </member>
         <member name="T:DataTier.EFExtension">
