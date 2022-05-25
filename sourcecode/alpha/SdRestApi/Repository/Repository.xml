@@ -2795,6 +2795,21 @@
         <member name="P:Repository.TodoItem.IsComplete">
             <remarks/>
         </member>
+        <member name="P:Repository.TodoItem.Secret">
+            <remarks/>
+        </member>
+        <member name="T:Repository.TodoItemDTO">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItemDTO.Id">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItemDTO.Name">
+            <remarks/>
+        </member>
+        <member name="P:Repository.TodoItemDTO.IsComplete">
+            <remarks/>
+        </member>
         <member name="T:Repository.WorkingTime">
             <remarks />
         </member>

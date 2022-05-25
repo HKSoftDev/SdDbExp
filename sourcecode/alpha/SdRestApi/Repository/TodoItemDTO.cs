@@ -5,7 +5,7 @@
 namespace Repository;
 
 /// <remarks/>
-public class TodoItem
+public class TodoItemDTO
 {
   /// <remarks/>
   public long Id { get; set; }
@@ -15,8 +15,5 @@ public class TodoItem
 
   /// <remarks/>
   public bool IsComplete { get; set; }
-
-  /// <remarks/>
-  public string? Secret { get; set; }
 
 }
