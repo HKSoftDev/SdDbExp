@@ -11,7 +11,7 @@ public class View3in1Organization
 	#region Fields
 
 	/// <remarks/>
-	public const string CsvHeader="Silo;Organisation;Aktiveringsdato;Deaktiveringsdato;Afdelingsid;Afdelingsuuid;Afdelingsniveau;Overordnet\r\n";
+	public const string CsvHeader="Silo;Organisation;Aktiveringsdato;Deaktiveringsdato;AfdelingsId;AfdelingsUuid;Afdelingsniveau;Overordnet\r\n";
 
 	#endregion
 
@@ -24,11 +24,11 @@ public class View3in1Organization
 	/// <param name="afdelingsid" /><param name="afdelingsuuid" /><param name="afdelingsniveau" /><param name="overordnet" />
 	public View3in1Organization(string silo,string organisation,DateTime aktiveringsdato,DateTime deaktiveringsdato,string afdelingsid,string afdelingsuuid,string afdelingsniveau,string overordnet) {
 		this.Silo=silo; this.Organisation=organisation; this.Aktiveringsdato=aktiveringsdato; this.Deaktiveringsdato=deaktiveringsdato;
-		this.Afdelingsid=afdelingsid; this.Afdelingsuuid=afdelingsuuid; this.Afdelingsniveau=afdelingsniveau; this.Overordnet=overordnet; }
+		this.AfdelingsId=afdelingsid; this.AfdelingsUuid=afdelingsuuid; this.Afdelingsniveau=afdelingsniveau; this.Overordnet=overordnet; }
 
 	/// <summary>Initializes an instance of View3in1Organization, that accepts data from an existing View3in1Organization</summary><param name="entity" />
 	public View3in1Organization(View3in1Organization entity) { this.Silo=entity.Silo; this.Organisation=entity.Organisation; this.Aktiveringsdato=entity.Aktiveringsdato; this.Deaktiveringsdato=entity.Deaktiveringsdato;
-		this.Afdelingsid=entity.Afdelingsid; this.Afdelingsuuid=entity.Afdelingsuuid; this.Afdelingsniveau=entity.Afdelingsniveau; this.Overordnet=entity.Overordnet; }
+		this.AfdelingsId=entity.AfdelingsId; this.AfdelingsUuid=entity.AfdelingsUuid; this.Afdelingsniveau=entity.Afdelingsniveau; this.Overordnet=entity.Overordnet; }
 
 	#endregion
 
@@ -53,12 +53,12 @@ public class View3in1Organization
 	public DateTime Deaktiveringsdato { get; set; } = DateTime.Parse("9999-12-31");
 
 	/// <remarks/>
-	[JsonProperty("Afdelingsid")][XmlElement("Afdelingsid")]
-	public string Afdelingsid { get; set; } = string.Empty;
+	[JsonProperty("AfdelingsId")][XmlElement("AfdelingsId")]
+	public string AfdelingsId { get; set; } = string.Empty;
 
 	/// <remarks/>
-	[JsonProperty("Afdelingsuuid")][XmlElement("Afdelingsuuid")]
-	public string Afdelingsuuid { get; set; } = string.Empty;
+	[JsonProperty("AfdelingsUuid")][XmlElement("AfdelingsUuid")]
+	public string AfdelingsUuid { get; set; } = string.Empty;
 
 	/// <remarks/>
 	[JsonProperty("Afdelingsniveau")][XmlElement("Afdelingsniveau")]
@@ -74,7 +74,7 @@ public class View3in1Organization
 
 	/// <remarks/>
 	public string CsvValue => this.Silo+";"+this.Organisation+";"+this.Aktiveringsdato.ToString("yyyy-MM-dd")+";"+this.Deaktiveringsdato.ToString("yyyy-MM-dd")+";"+
-		this.Afdelingsid+";"+this.Afdelingsuuid+";"+this.Afdelingsniveau+";"+Overordnet+"\r\n";
+		this.AfdelingsId+";"+this.AfdelingsUuid+";"+this.Afdelingsniveau+";"+Overordnet+"\r\n";
 
 	#endregion
 
@@ -88,8 +88,8 @@ public class View3in1Organization
 		result += "    <Organisation>"+Organisation+"<\\Organisation>"+Environment.NewLine;
 		result += "    <Aktiveringsdato>"+Aktiveringsdato.ToString("yyyy-MM-dd")+"<\\Aktiveringsdato>"+Environment.NewLine;
 		result += "    <Deaktiveringsdato>"+Deaktiveringsdato.ToString("yyyy-MM-dd")+"<\\Deaktiveringsdato>"+Environment.NewLine;
-		result += "    <Afdelingsid>"+Afdelingsid+"<\\Afdelingsid>"+Environment.NewLine;
-		result += "    <Afdelingsuuid>"+Afdelingsuuid+"<\\Afdelingsuuid>"+Environment.NewLine;
+		result += "    <AfdelingsId>"+AfdelingsId+"<\\AfdelingsId>"+Environment.NewLine;
+		result += "    <AfdelingsUuid>"+AfdelingsUuid+"<\\AfdelingsUuid>"+Environment.NewLine;
 		result += "    <Afdelingsniveau>"+Afdelingsniveau+"<\\Afdelingsniveau>"+Environment.NewLine;
 		result += "    <Overordnet>"+Overordnet+"<\\Overordnet>"+Environment.NewLine;
 		result += "<\\View3in1Organization>"+Environment.NewLine; return result; }

@@ -4,10 +4,22 @@
 // -------------------------------------------------------------------------------------------------------------------------------
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+
 builder.Services.AddControllers();
-//builder.Services.AddDbContext<EFContext>(opt => opt.UseInMemoryDatabase("TodoList"));
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<EFContext>(options => options.UseSqlServer(WebApi.Resources.ConnectionString));
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v4", new() { Title = "SdWebApi", Version = "v4" }); });
+
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+	 .AddNegotiate();
+
+builder.Services.AddAuthorization(options =>
+{
+	// By default, all incoming requests will be authorized according to the default policy.
+	options.FallbackPolicy = options.DefaultPolicy;
+});
 
 WebApplication? app = builder.Build();
 
@@ -16,6 +28,7 @@ if (builder.Environment.IsDevelopment()) { app.UseDeveloperExceptionPage(); app.
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

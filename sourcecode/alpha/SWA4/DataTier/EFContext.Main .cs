@@ -125,12 +125,12 @@ public partial class EFContext : DbContext //Main
 		modelBuilder.Entity<ViewEmploymentStatus>(entity => { entity.HasNoKey(); entity.ToView("ViewEmploymentStatusListHB","dbo"); });
 		modelBuilder.Entity<ViewEmploymentToday>(entity => { entity.HasNoKey(); entity.ToView("View_Employment_Today","dbo"); entity.Property(e => e.DepartmentUuid).HasColumnName("DepartmentUUID"); });
 		modelBuilder.Entity<ViewFullProfession>(entity => { entity.HasNoKey(); entity.ToView("ViewFullProfessions","dbo"); });
-		modelBuilder.Entity<ViewInstitution>(entity => { entity.HasNoKey(); entity.ToView("ViewInstitutionListHB","dbo"); });
+		modelBuilder.Entity<ViewInstitution>(entity => { entity.HasNoKey(); entity.ToView("ViewInstitutionList","dbo"); });
 		modelBuilder.Entity<ViewKantine>(entity => { entity.HasNoKey(); entity.ToView("ViewKantineList","dbo"); });
 		modelBuilder.Entity<ViewMoch>(entity => { entity.HasNoKey(); entity.ToView("View_MOCH","dbo"); });
 		modelBuilder.Entity<ViewOccupationRate>(entity => { entity.HasNoKey(); entity.ToView("View_OccupationRates","dbo"); });
-		modelBuilder.Entity<ViewOrganization>(entity => { entity.HasNoKey(); entity.ToView("ViewOrganizationListHB","dbo"); });
-		modelBuilder.Entity<ViewOrganizationStructure>(entity => { entity.HasNoKey(); entity.ToView("ViewOrganizationStructureListHB", "dbo"); });
+		modelBuilder.Entity<ViewOrganization>(entity => { entity.HasNoKey(); entity.ToView("ViewOrganizationList","dbo"); });
+		modelBuilder.Entity<ViewOrganizationStructure>(entity => { entity.HasNoKey(); entity.ToView("ViewOrganizationStructureList", "dbo"); });
 		modelBuilder.Entity<ViewPermanentEmployment>(entity => { entity.HasNoKey(); entity.ToView("View_Permanent_Employment","dbo"); entity.Property(e => e.DepartmentUuid).HasColumnName("DepartmentUUID"); });
 		modelBuilder.Entity<ViewPermanentEmploymentSalaried>(entity => { entity.HasNoKey(); entity.ToView("View_Permanent_Employment_Salaried","dbo"); entity.Property(e => e.DepartmentUuid).HasColumnName("DepartmentUUID"); });
 		modelBuilder.Entity<ViewPerson>(entity => { entity.HasNoKey(); entity.ToView("ViewPersonListHB","dbo"); });

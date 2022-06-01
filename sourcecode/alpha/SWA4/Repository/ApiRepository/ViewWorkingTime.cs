@@ -21,10 +21,10 @@ public partial class ViewWorkingTime
 	public ViewWorkingTime ()	{ }
 
 	/// <summary>Initializes a new instance of ViewWorkingTime</summary><param name="id" /><param name="employmentId" /><param name="activationDate" /><param name="deactivationDate" />
-	/// <param name="occupationRate" /><param name="salaryRate" /><param name="salariedIndicator" /><param name="automaticRaiseIndicator" /><param name="fullTimeIndicator" />
-	public ViewWorkingTime(int id,string employmentId,string activationDate,string deactivationDate,string occupationRate,string salaryRate,bool salariedIndicator,bool automaticRaiseIndicator,bool fullTimeIndicator) {
-		this.Id=id; this.EmploymentIdentifier=employmentId; this.ActivationDate=activationDate; this.DeactivationDate=deactivationDate; this.OccupationRate=occupationRate; this.SalaryRate=salaryRate;
-		this.SalariedIndicator=salariedIndicator; this.AutomaticRaiseIndicator=automaticRaiseIndicator; this.FullTimeIndicator=fullTimeIndicator; }
+	/// <param name="occupationRate" /><param name="salaryRate" /><param name="salaried" /><param name="automaticRaise" /><param name="fullTime" />
+	public ViewWorkingTime(int id,string employmentId,DateTime activationDate, DateTime deactivationDate,string occupationRate,string salaryRate,bool salaried, bool automaticRaise, bool fullTime) { this.Id=id;
+		this.EmploymentIdentifier=employmentId; this.ActivationDate=activationDate; this.DeactivationDate=deactivationDate; this.OccupationRate=occupationRate; this.SalaryRate=salaryRate; this.SalariedIndicator= salaried;
+		this.AutomaticRaiseIndicator= automaticRaise; this.FullTimeIndicator= fullTime; }
 
 	/// <summary>Initializes an instance of ViewWorkingTime, that accepts data from an existing ViewWorkingTime</summary><param name="entity" />
 	public ViewWorkingTime(ViewWorkingTime entity) { this.Id=entity.Id; this.EmploymentIdentifier=entity.EmploymentIdentifier; this.InstitutionIdentifier=entity.InstitutionIdentifier; 
@@ -51,11 +51,11 @@ public partial class ViewWorkingTime
 
 	/// <remarks />
 	[JsonProperty("ActivationDate")][XmlElement("ActivationDate")]
-	public string ActivationDate { get; set; } = null!;
+	public DateTime ActivationDate { get; set; } = DateTime.Parse("2010-01-01");
 
 	/// <remarks />
 	[JsonProperty("DeactivationDate")][XmlElement("DeactivationDate")]
-	public string DeactivationDate { get; set; } = null!;
+	public DateTime DeactivationDate { get; set; } = DateTime.Parse("9999-12-31");
 
 	/// <remarks />
 	[JsonProperty("OccupationRate")][XmlElement("OccupationRate")]
@@ -82,7 +82,7 @@ public partial class ViewWorkingTime
 	#region Other
 
 	/// <remarks/>
-	public string CsvValue => this.Id+";"+this.EmploymentIdentifier+";"+this.InstitutionIdentifier+";"+this.ActivationDate+";"+this.DeactivationDate+";"+
+	public string CsvValue => this.Id+";"+this.EmploymentIdentifier+";"+this.InstitutionIdentifier+";"+this.ActivationDate.ToString("yyyy-MM-dd")+";"+this.DeactivationDate.ToString("yyyy-MM-dd")+";"+
 		this.OccupationRate+";"+this.SalaryRate+";"+this.SalariedIndicator.ToString()+";"+this.AutomaticRaiseIndicator.ToString()+";"+this.FullTimeIndicator.ToString()+"\r\n";
 
 	#endregion
@@ -92,18 +92,12 @@ public partial class ViewWorkingTime
 	#region Methods
 
 	/// <returns>Field content as xml string</returns>
-	public string ToXmlString() { string result="<ViewWorkingTime creationDateTime=\""+DateTime.Now.ToString("yyyy-MM-ddThh:mm:ss")+"\">"+Environment.NewLine;
-		result += "    <Id>"+Id+"<\\Id>"+Environment.NewLine;
-		result += "    <EmploymentIdentifier>"+EmploymentIdentifier+"<\\EmploymentIdentifier>"+Environment.NewLine;
-		result += "    <InstitutionIdentifier>"+InstitutionIdentifier+"<\\InstitutionIdentifier>"+Environment.NewLine;
-		result += "    <ActivationDate>"+ActivationDate+"<\\ActivationDate>"+Environment.NewLine;
-		result += "    <DeactivationDate>"+DeactivationDate+"<\\DeactivationDate>"+Environment.NewLine;
-		result += "    <OccupationRate>"+OccupationRate+"<\\OccupationRate>"+Environment.NewLine;
-		result += "    <SalaryRate>"+SalaryRate+"<\\SalaryRate>"+Environment.NewLine;
-		result += "    <SalariedIndicator>"+SalariedIndicator.ToString()+"<\\SalariedIndicator>"+Environment.NewLine;
-		result += "    <AutomaticRaiseIndicator>"+AutomaticRaiseIndicator.ToString()+"<\\AutomaticRaiseIndicator>"+Environment.NewLine;
-		result += "    <FullTimeIndicator>"+FullTimeIndicator.ToString()+"<\\FullTimeIndicator>"+Environment.NewLine;
-		result += "<\\ViewWorkingTime>"+Environment.NewLine; return result; }
+	public string ToXmlString() { string result="<ViewWorkingTime creationDateTime=\""+DateTime.Now.ToString("yyyy-MM-ddThh:mm:ss")+"\">"+Environment.NewLine+"    <Id>"+Id+"<\\Id>"+Environment.NewLine;
+		result+="    <EmploymentIdentifier>"+EmploymentIdentifier+"<\\EmploymentIdentifier>"+Environment.NewLine+"    <InstitutionIdentifier>"+InstitutionIdentifier+"<\\InstitutionIdentifier>"+Environment.NewLine;
+		result+="    <ActivationDate>"+ActivationDate.ToString("yyyy-MM-dd")+"<\\ActivationDate>"+Environment.NewLine+"    <DeactivationDate>"+DeactivationDate.ToString("yyyy-MM-dd")+"<\\DeactivationDate>"+Environment.NewLine;
+		result+="    <OccupationRate>"+OccupationRate+"<\\OccupationRate>"+Environment.NewLine+"    <SalaryRate>"+SalaryRate+"<\\SalaryRate>"+Environment.NewLine+"    <SalariedIndicator>"+SalariedIndicator.ToString();
+		result+= "<\\SalariedIndicator>"+Environment.NewLine+"    <AutomaticRaiseIndicator>"+AutomaticRaiseIndicator.ToString()+"<\\AutomaticRaiseIndicator>"+Environment.NewLine+"    <FullTimeIndicator>";
+		result+= FullTimeIndicator.ToString()+"<\\FullTimeIndicator>"+Environment.NewLine+"<\\ViewWorkingTime>"+Environment.NewLine; return result; }
 
 	#endregion
 

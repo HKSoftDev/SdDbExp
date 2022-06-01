@@ -242,11 +242,11 @@ public class ViewProfessionListController : ControllerBase
 }
 
 [Route("[controller]")][ApiController]
-public class ViewSalaryAgreementLisController : ControllerBase
+public class ViewSalaryAgreementListController : ControllerBase
 {
   private readonly EFContext _context;
 
-  public ViewSalaryAgreementLisController(EFContext context) { _context = context; }
+  public ViewSalaryAgreementListController(EFContext context) { _context = context; }
 
   /// <summary>GET: GetSalaryAgreementList</summary><returns>result as Task{string}</returns>
   [HttpGet]

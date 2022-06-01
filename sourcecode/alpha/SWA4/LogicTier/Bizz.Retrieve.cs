@@ -22,87 +22,89 @@ public partial class Bizz // Retrieve
 
 	/// <returns>View3in1Organizations as csv string</returns><param name="view" />
 	public static async Task<string> Retrieve3in1Organizations(DbSet<View3in1Organization> view) { if (view == null) throw new NullReferenceException("- View3in1Organizations was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<View3in1Organization> result= await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[View3in1Organizations] ORDER BY Afdelingsid,Overordnet").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<View3in1Organization> result= await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[View3in1Organizations] ORDER BY AfdelingsId,Overordnet").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>View3in1OrganizationStructures as csv string</returns><param name="view" />
 	public static async Task<string> Retrieve3in1OrganizationStructures(DbSet<View3in1OrganizationStructure> view) { if (view == null) throw new NullReferenceException("- View3in1OrganizationStructures was not found"+
-		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<View3in1OrganizationStructure> result=await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[View3in1OrganizationStructures] ORDER BY Afdelingsid,Overordnet").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<View3in1OrganizationStructure> result=await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[View3in1OrganizationStructures] ORDER BY Afdelingsniveau,Overordnet").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>View3in1Persons as csv string</returns><param name="view" />
 	public static async Task<string> Retrieve3in1Persons(DbSet<View3in1Person> view) { if (view == null) throw new NullReferenceException("- View3in1Persons was not found"+Environment.NewLine+"  "+StatusCodes.Status404NotFound);
-		List<View3in1Person> result=await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[View3in1Persons] ORDER BY Cpr,Tjenestenummer").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		List<View3in1Person> result=await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[View3in1Persons] ORDER BY Cpr,Tjenestenummer").ToListAsync(); 
+		return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewContactInformationList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveContactInformationList(DbSet<ViewContactInformation> view) { if (view == null) throw new NullReferenceException("- View3in1ContactInformationList was not found"+Environment.NewLine+
-		"  "+StatusCodes.Status404NotFound); List<ViewContactInformation> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewContactInformationListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		"  "+StatusCodes.Status404NotFound); List<ViewContactInformation> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewContactInformationListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewDepartmentLevelReferenceList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveDepartmentLevelReferenceList(DbSet<ViewDepartmentLevelReference> view) { if (view == null) throw new NullReferenceException("- ViewDepartmentLevelReferenceList was not found"+
-		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewDepartmentLevelReference> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewDepartmentLevelReferenceListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
+		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewDepartmentLevelReference> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewDepartmentLevelReferenceListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
 
 	/// <returns>ViewDepartmentList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveDepartmentList(DbSet<ViewDepartment> view) { if (view == null) throw new NullReferenceException("- ViewDepartmentList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewDepartment> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewDepartmentListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);}
+		StatusCodes.Status404NotFound); List<ViewDepartment> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewDepartmentListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);}
 
 	/// <returns>ViewDepartmentReferenceList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveDepartmentReferenceList(DbSet<ViewDepartmentReference> view) { if (view == null) throw new NullReferenceException("- ViewDepartmentReferenceList was not found"+Environment.NewLine+
-		"  "+StatusCodes.Status404NotFound); List<ViewDepartmentReference> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewDepartmentReferenceListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
+		"  "+StatusCodes.Status404NotFound); List<ViewDepartmentReference> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewDepartmentReferenceListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
 
 	/// <returns>ViewEmploymentList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveEmploymentList(DbSet<ViewEmployment> view) { if (view == null) throw new NullReferenceException("- ViewEmploymentList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewEmployment> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewEmploymentListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewEmployment> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewEmploymentListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewEmploymentProfessionList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveEmploymentProfessionList(DbSet<ViewEmploymentProfession> view) { if (view == null) throw new NullReferenceException("- ViewEmploymentProfessionList was not found"+
-		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewEmploymentProfession> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewEmploymentProfessionListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewEmploymentProfession> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewEmploymentProfessionListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewEmploymentStatusList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveEmploymentStatusList(DbSet<ViewEmploymentStatus> view) { if (view == null) throw new NullReferenceException("- ViewEmploymentStatusList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewEmploymentStatus> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewEmploymentstatusListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewEmploymentStatus> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewEmploymentstatusListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewInstitutionList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveInstitutionList(DbSet<ViewInstitution> view) { if (view == null) throw new NullReferenceException("- ViewInstitutionList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewInstitution> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewInstitutionListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewInstitution> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewInstitutionList]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewKantineList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveKantineList(DbSet<ViewKantine> view) { if (view == null) throw new NullReferenceException("- ViewKantineList was not found"+Environment.NewLine+"  "+StatusCodes.Status404NotFound);
-		List<ViewKantine> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewKantineList] ORDER BY Cpr,Tjenestenummer,Afdelingskode,Beskæftigelsesdecimal DESC").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
+		List<ViewKantine> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewKantineList] ORDER BY Cpr,Tjenestenummer,Afdelingskode,Beskæftigelsesdecimal DESC").ToListAsync(); return ConvertApiEntityListToCsvString(result);	}
 
 	/// <returns>ViewMochs as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveMochs(DbSet<ViewMoch> view) { if (view == null) throw new NullReferenceException("- ViewMochs was not found"+Environment.NewLine+"  "+StatusCodes.Status404NotFound);
-		List<ViewMoch> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewMochs] ORDER BY [Afdeling],[Tjenestenummer],[Efternavn],[Fornavn]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		List<ViewMoch> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewMochs] ORDER BY [Afdeling],[Tjenestenummer],[Efternavn],[Fornavn]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewOrganizationList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveOrganizationList(DbSet<ViewOrganization> view) { if (view == null) throw new NullReferenceException("- ViewOrganizationList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewOrganization> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewOrganizationListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewOrganization> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewOrganizationList]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewOrganizationStructureList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveOrganizationStructureList(DbSet<ViewOrganizationStructure> view) { if (view == null) throw new NullReferenceException("- ViewOrganizationStructureList was not found"+
-		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewOrganizationStructure> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewOrganizationStructureListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		Environment.NewLine+"  "+StatusCodes.Status404NotFound); List<ViewOrganizationStructure> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewOrganizationStructureList]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewPersonList as csv string</returns><param name="view" />
 	public static async Task<string> RetrievePersonList(DbSet<ViewPerson> view) { if (view == null) throw new NullReferenceException("- ViewPersonList was not found"+Environment.NewLine+"  "+StatusCodes.Status404NotFound);
-	List<ViewPerson> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewPersonListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+	List<ViewPerson> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewPersonListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewPostalAddressList as csv string</returns><param name="view" />
 	public static async Task<string> RetrievePostalAddressList(DbSet<ViewPostalAddress> view) { if (view == null) throw new NullReferenceException("- ViewPostalAddressList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewPostalAddress> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewPostalAddressListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewPostalAddress> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewPostalAddressListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewProfessionList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveProfessionList(DbSet<ViewProfession> view) { if (view == null) throw new NullReferenceException("- ViewProfessionList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewProfession> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewProfessionListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewProfession> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewProfessionListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewSalaryAgreementList as csv string</returns><param name="view" />
 	public static async Task<string> RetrieveSalaryAgreementList(DbSet<ViewSalaryAgreement> view) { if (view == null) throw new NullReferenceException("- ViewSalaryAgreementList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewSalaryAgreement> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewSalaryAgreementListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+		StatusCodes.Status404NotFound); List<ViewSalaryAgreement> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewSalaryAgreementListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
-	/// <returns>View3in1ContactInformationList as csv string</returns><param name="view" />
-	public static async Task<string> RetrieveSalaryCodeGroupList(DbSet<ViewSalaryCodeGroup> view) { if (view == null) throw new NullReferenceException("- View3in1ContactInformationList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewSalaryCodeGroup> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewSalaryCodeGroupListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+	/// <returns>ViewSalaryCodeGroupList as csv string</returns><param name="view" />
+	public static async Task<string> RetrieveSalaryCodeGroupList(DbSet<ViewSalaryCodeGroup> view) { if (view == null) throw new NullReferenceException("- ViewSalaryCodeGroupList was not found" + Environment.NewLine+"  "+
+		StatusCodes.Status404NotFound); List<ViewSalaryCodeGroup> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewSalaryCodeGroupListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
 
 	/// <returns>ViewWorkingTimeList as csv string</returns><param name="view" />
-	public static async Task<string> RetrieveWorkingTimeList(DbSet<ViewWorkingTime> view) { if (view == null) throw new NullReferenceException("- ViewWorkingTimeList was not found"+Environment.NewLine+"  "+
-		StatusCodes.Status404NotFound); List<ViewWorkingTime> result = await view.FromSqlRaw("SELECT * FROM [SD].[dbo].[ViewWorkingTimeListHB]").ToListAsync(); return ConvertApiEntityListToCsvString(result); }
+	public static async Task<string> RetrieveWorkingTimeList(DbSet<ViewWorkingTime> view) { if (view == null) throw new NullReferenceException("- ViewWorkingTimeList was not found"+Environment.NewLine+"  "+StatusCodes.Status404NotFound);
+		List<ViewWorkingTime> result = await view.FromSqlRaw("SELECT DISTINCT * FROM [SD].[dbo].[ViewWorkingTimeListHB]").ToListAsync();
+		return ConvertApiEntityListToCsvString(result); }
 
 	#endregion
 
@@ -139,10 +141,10 @@ public partial class Bizz // Retrieve
 	#endregion
 
 	/// <summary>Retrieves the current domain path</summary><returns>Result as string</returns>
-	protected static string RetrieveCurrentDomainPath() { 		using (DirectoryEntry de=new("LDAP://RootDSE")) { return "LDAP://"+de.Properties["defaultNamingContext"][0].ToString(); } }
+	protected static string RetrieveCurrentDomainPath() { using DirectoryEntry de = new("LDAP://RootDSE"); return "LDAP://" + de.Properties["defaultNamingContext"][0].ToString(); }
 
 	/// <returns>Element Name from <paramref name="xml"/> as string</returns><param name="xml" />
-	protected string RetrieveElementNameFromxml(string xml) { using TextReader reader=new StringReader(xml); XDocument doc=XDocument.Load(reader); foreach (XElement xElement in doc.Descendants()) { switch (xElement.Name.ToString()) {
+	protected static string RetrieveElementNameFromXml(string xml) { using TextReader reader=new StringReader(xml); XDocument doc=XDocument.Load(reader); foreach (XElement xElement in doc.Descendants()) { switch (xElement.Name.ToString()) {
 		case "GetDepartment20111201": return "GetDepartment20111201"; case "GetEmployment20111201": return "GetEmployment20111201"; case "GetEmploymentChanged20111201": return "GetEmploymentChanged20111201";
 		case "GetEmploymentChangedAtDate20111201": return "GetEmploymentChangedAtDate20111201"; case "GetInstitution20111201": return "GetInstitution20111201"; case "GetOrganization20111201": return "GetOrganization20111201";
 		case "GetPerson20111201": return "GetPerson20111201"; case "GetPersonChangedAtDate20111201": return "GetPersonChangedAtDate20111201"; case "GetProfession20080201": return "GetProfession20080201"; default: break; } } return string.Empty; }
@@ -256,7 +258,7 @@ public partial class Bizz // Retrieve
 	#endregion
 
 	///<remarks /><param name="user" />
-	private string RetrieveInstitutionIdentifier(ADUser user) => user.PrimaryGroupId;
+	private static string RetrieveInstitutionIdentifier(ADUser user) => user.PrimaryGroupId;
 
 	/// <returns>Node count from an <paramref name="xml"/> as string</returns><param name="sdApi" /><param name="xml" /><exception cref="ArgumentInvalidException" />
 	private int RetrieveNodeCountFromxml(string sdApi,string xml) => sdApi switch { "GetDepartment" => XmlSerializationUtil.Deserialize<GetDepartment20111201>(xml).Departments.Count,
@@ -386,7 +388,7 @@ public partial class Bizz // Retrieve
 	#endregion
 
 	/// <returns>SdApi from <paramref name="xml"/> as string</returns><param name="xml" />
-	private string RetrieveSdApiFromxml(string xml) { string entityType=RetrieveElementNameFromxml(xml); return entityType switch { "GetDepartment20111201" => "GetDepartment", "GetEmployment20111201" => "GetEmployment",
+	private string RetrieveSdApiFromxml(string xml) { string entityType=RetrieveElementNameFromXml(xml); return entityType switch { "GetDepartment20111201" => "GetDepartment", "GetEmployment20111201" => "GetEmployment",
 		"GetEmploymentChanged20111201" => "GetEmploymentChanged", "GetEmploymentChangedAtDate20111201" => "GetEmploymentChangedAtDate", "GetInstitution20111201" => "GetInstitution", "GetOrganization20111201" => "GetOrganization",
 		"GetPerson20111201" => "GetPerson", "GetPersonChangedAtDate20111201" => "GetPersonChangedAtDate", "GetProfession20080201" => "GetProfession", _ => throw new InvalidRefException(nameof(entityType),entityType,nameof(entityType)+Error.UnkParam), }; }
 

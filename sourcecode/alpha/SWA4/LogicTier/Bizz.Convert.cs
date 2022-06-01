@@ -38,7 +38,7 @@ public partial class Bizz // Convert
 	/// <returns><paramref name="list"/> as an xml string</returns><typeparam name="T" /><param name="list" />
 	private string ConvertApiEntityListToXmlString<T>(List<T> list) where T : class { string result = "\u003C\u003Fxml version=\u00221\u002E0\u0022 encoding=\u0022utf-16\u0022\u003F\u003E"+Environment.NewLine;
 		string type = typeof(T).Name; result+="\u003C"+type+"s\u003E" + Environment.NewLine; foreach (T obj in list) { switch (type) { case "View3in1Organization": result += (obj as View3in1Organization).ToXmlString(); break;
-			case "View3in1OrganizationStructure": result += (obj as View3in1OrganizationStructure).ToXmlString(); break; case "View3in1Person": result += (obj as View3in1Person).ToXmlString(); break;
+			case "View3in1OrganizationStructure": result += (obj as View3in1OrganizationStructure).XmlString; break; case "View3in1Person": result += (obj as View3in1Person).ToXmlString(); break;
 			case "ViewContactInformation": result += (obj as ViewContactInformation).ToXmlString(); break; case "ViewControl": result += (obj as ViewControl).ToXmlString(); break;
 			case "ViewDepartment": result += (obj as ViewDepartment).ToXmlString(); break; case "ViewDepartmentLevelReference": result += (obj as ViewDepartmentLevelReference).ToXmlString(); break;
 			case "ViewDepartmentReference": result += (obj as ViewDepartmentReference).ToXmlString(); break; case "ViewEmployment": result += (obj as ViewEmployment).ToXmlString(); break;

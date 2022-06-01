@@ -1008,7 +1008,7 @@
             <returns>ViewSalaryAgreementList as csv string</returns><param name="view" />
         </member>
         <member name="M:LogicTier.Bizz.RetrieveSalaryCodeGroupList(Microsoft.EntityFrameworkCore.DbSet{ApiRepository.ViewSalaryCodeGroup})">
-            <returns>View3in1ContactInformationList as csv string</returns><param name="view" />
+            <returns>ViewSalaryCodeGroupList as csv string</returns><param name="view" />
         </member>
         <member name="M:LogicTier.Bizz.RetrieveWorkingTimeList(Microsoft.EntityFrameworkCore.DbSet{ApiRepository.ViewWorkingTime})">
             <returns>ViewWorkingTimeList as csv string</returns><param name="view" />
@@ -1028,7 +1028,7 @@
         <member name="M:LogicTier.Bizz.RetrieveCurrentDomainPath">
             <summary>Retrieves the current domain path</summary><returns>Result as string</returns>
         </member>
-        <member name="M:LogicTier.Bizz.RetrieveElementNameFromxml(System.String)">
+        <member name="M:LogicTier.Bizz.RetrieveElementNameFromXml(System.String)">
             <returns>Element Name from <paramref name="xml"/> as string</returns><param name="xml" />
         </member>
         <member name="M:LogicTier.Bizz.RetrieveOldest``1(``0,``0)">

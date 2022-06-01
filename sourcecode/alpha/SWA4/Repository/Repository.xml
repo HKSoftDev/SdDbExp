@@ -2946,10 +2946,10 @@
         <member name="P:ApiRepository.View3in1Organization.Deaktiveringsdato">
             <remarks/>
         </member>
-        <member name="P:ApiRepository.View3in1Organization.Afdelingsid">
+        <member name="P:ApiRepository.View3in1Organization.AfdelingsId">
             <remarks/>
         </member>
-        <member name="P:ApiRepository.View3in1Organization.Afdelingsuuid">
+        <member name="P:ApiRepository.View3in1Organization.AfdelingsUuid">
             <remarks/>
         </member>
         <member name="P:ApiRepository.View3in1Organization.Afdelingsniveau">
@@ -2973,9 +2973,8 @@
         <member name="M:ApiRepository.View3in1OrganizationStructure.#ctor">
             <summary>Initializes an empty instance of View3in1OrganizationStructure</summary>
         </member>
-        <member name="M:ApiRepository.View3in1OrganizationStructure.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
-            <summary>Initializes a new instance of View3in1OrganizationStructure</summary><param name="silo" /><param name="organisationstruktur" /><param name="afdelingsid" /><param name="afdelingsuuid" />
-            <param name="afdelingsniveau" /><param name="overordnet" />
+        <member name="M:ApiRepository.View3in1OrganizationStructure.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>Initializes a new instance of View3in1OrganizationStructure</summary><param name="silo" /><param name="organisationstruktur" /><param name="afdelingsniveau" /><param name="overordnet" />
         </member>
         <member name="M:ApiRepository.View3in1OrganizationStructure.#ctor(ApiRepository.View3in1OrganizationStructure)">
             <summary>Initializes an instance of View3in1OrganizationStructure, that accepts data from an existing View3in1OrganizationStructure</summary><param name="entity" />
@@ -2984,12 +2983,6 @@
             <remarks/>
         </member>
         <member name="P:ApiRepository.View3in1OrganizationStructure.Organisationstruktur">
-            <remarks/>
-        </member>
-        <member name="P:ApiRepository.View3in1OrganizationStructure.Afdelingsid">
-            <remarks/>
-        </member>
-        <member name="P:ApiRepository.View3in1OrganizationStructure.Afdelingsuuid">
             <remarks/>
         </member>
         <member name="P:ApiRepository.View3in1OrganizationStructure.Afdelingsniveau">
@@ -3001,7 +2994,7 @@
         <member name="P:ApiRepository.View3in1OrganizationStructure.CsvValue">
             <remarks/>
         </member>
-        <member name="M:ApiRepository.View3in1OrganizationStructure.ToXmlString">
+        <member name="M:ApiRepository.View3in1OrganizationStructure.XmlString">
             <returns>Field content as xml string</returns>
         </member>
         <member name="T:ApiRepository.View3in1PermanentEmployment">
@@ -3050,7 +3043,7 @@
             <summary>Initializes an empty instance of View3in1Person</summary>
         </member>
         <member name="M:ApiRepository.View3in1Person.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
-            <summary>Initializes a new instance of View3in1Person</summary><param name="tjenestenummer" /><param name="silo" /><param name="afdelingsid" /><param name="afdelingsuuid" /><param name="afdelingsnavn" />
+            <summary>Initializes a new instance of View3in1Person</summary><param name="tjenestenummer" /><param name="silo" /><param name="afdelingsId" /><param name="afdelingsUuid" /><param name="afdelingsnavn" />
             <param name="cpr" /><param name="fornavn" /><param name="efternavn" /><param name="email1" /><param name="email2" /><param name="tlf1" /><param name="tlf2" />
         </member>
         <member name="M:ApiRepository.View3in1Person.#ctor(ApiRepository.View3in1Person)">
@@ -3062,10 +3055,10 @@
         <member name="P:ApiRepository.View3in1Person.Silo">
             <remarks/>
         </member>
-        <member name="P:ApiRepository.View3in1Person.Afdelingsid">
+        <member name="P:ApiRepository.View3in1Person.AfdelingsId">
             <remarks/>
         </member>
-        <member name="P:ApiRepository.View3in1Person.Afdelingsuuid">
+        <member name="P:ApiRepository.View3in1Person.AfdelingsUuid">
             <remarks/>
         </member>
         <member name="P:ApiRepository.View3in1Person.Afdelingsnavn">
@@ -4204,9 +4197,9 @@
         <member name="M:ApiRepository.ViewWorkingTime.#ctor">
             <summary>Initializes an empty instance of ViewWorkingTime</summary>
         </member>
-        <member name="M:ApiRepository.ViewWorkingTime.#ctor(System.Int32,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:ApiRepository.ViewWorkingTime.#ctor(System.Int32,System.String,System.DateTime,System.DateTime,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)">
             <summary>Initializes a new instance of ViewWorkingTime</summary><param name="id" /><param name="employmentId" /><param name="activationDate" /><param name="deactivationDate" />
-            <param name="occupationRate" /><param name="salaryRate" /><param name="salariedIndicator" /><param name="automaticRaiseIndicator" /><param name="fullTimeIndicator" />
+            <param name="occupationRate" /><param name="salaryRate" /><param name="salaried" /><param name="automaticRaise" /><param name="fullTime" />
         </member>
         <member name="M:ApiRepository.ViewWorkingTime.#ctor(ApiRepository.ViewWorkingTime)">
             <summary>Initializes an instance of ViewWorkingTime, that accepts data from an existing ViewWorkingTime</summary><param name="entity" />
