@@ -12,14 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<EFContext>(options => options.UseSqlServer(WebApi.Resources.ConnectionString));
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v4", new() { Title = "SdWebApi", Version = "v4" }); });
 
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
-	 .AddNegotiate();
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
 
-builder.Services.AddAuthorization(options =>
-{
-	// By default, all incoming requests will be authorized according to the default policy.
-	options.FallbackPolicy = options.DefaultPolicy;
-});
+builder.Services.AddAuthorization(options => { options.FallbackPolicy = options.DefaultPolicy; });
+
+builder.Services.AddControllersWithViews(options => { AuthorizationPolicy? policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().RequireClaim("groups", "SdDatabase_Gruppe").Build();
+  options.Filters.Add(new AuthorizeFilter(policy)); }); 
 
 WebApplication? app = builder.Build();
 
