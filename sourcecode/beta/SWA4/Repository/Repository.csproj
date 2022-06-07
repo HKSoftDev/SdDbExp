@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- © 2022 Daniel Giversen. All Rights reserved. -->
 <!-- © 2022 Haderslev Kommune. All Rights reserved. -->
 <!-- Licenced under Proprietary License. See LICENSE.txt -->
@@ -33,15 +33,15 @@
 
 	<PropertyGroup Label="Version">
 		<Version>3.99.1</Version>
-		<VersionSuffix>RC</VersionSuffix>
+		<VersionSuffix>Beta</VersionSuffix>
 		<InformationalVersion Condition="'$(Configuration)' == 'Release'">$(Version)-$(VersionSuffix)+$(SourceRevisionId)</InformationalVersion>
 		<AssemblyVersion>$(Version).1</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Identification">
-		<RootNamespace>LogicTier</RootNamespace>
-		<Description>LogicTier for SdSuite</Description>
+		<RootNamespace>Repository</RootNamespace>
+		<Description>Repository for SdSuite</Description>
 		<PackageId>$(RootNamespace)_$(AssemblyVersion)_$(Platform)</PackageId>
 		<AssemblyName>$(RootNamespace)</AssemblyName>
 		<Product>$(RootNamespace)</Product>
@@ -55,7 +55,7 @@
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
-	<PropertyGroup Label="Build Debug" Condition="'$(Configuration)' == 'Debug'">
+	<PropertyGroup Label="Build Debug" Condition="'$(Configuration)'=='Debug'">
 		<DefineConstants>TRACE;DEBUG</DefineConstants>
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
@@ -63,7 +63,7 @@
 		<OutputPath>.\Debug\</OutputPath>
 	</PropertyGroup>
 
-	<PropertyGroup Label="Build Release" Condition="'$(Configuration)' == 'Release'">
+	<PropertyGroup Label="Build Release" Condition="'$(Configuration)'=='Release'">
 		<DefineConstants>TRACE;</DefineConstants>
 		<DebugSymbols>false</DebugSymbols>
 		<DebugType>embedded</DebugType>
@@ -72,29 +72,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="MyEntityFrameWork.cs_" />
-	</ItemGroup>
-
-	<ItemGroup Label="PackageReferences">
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
-		<PackageReference Include="System.DirectoryServices" Version="6.0.0" />
-		<PackageReference Include="AutoMapper" Version="11.0.1" />
-		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-		<PackageReference Include="FluentValidation" Version="11.0.1" />
-		<PackageReference Include="FluentValidation.AspNetCore" Version="11.0.1" />
-		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.1" />
 		<PackageReference Include="libphonenumber-csharp" Version="8.12.48" />
-		<PackageReference Include="MediatR" Version="10.0.1" />
-		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 		<PackageReference Include="MongoDB.Driver" Version="2.15.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\DataTier\DataTier.csproj" />
-		<ProjectReference Include="..\Repository\Repository.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

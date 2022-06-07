@@ -61,6 +61,24 @@ namespace WebApi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to dlfn37f433#F3f3d3cdevvw2d.
+        /// </summary>
+        internal static string ADPassword {
+            get {
+                return ResourceManager.GetString("ADPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to service_udcsd.
+        /// </summary>
+        internal static string ADUserName {
+            get {
+                return ResourceManager.GetString("ADUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data Source=udcsql2012;Initial Catalog=SD;User ID=sd;Password=kfe73fmf3F9f21dC;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True;ConnectRetryCount=255.
         /// </summary>
         internal static string ConnectionString {

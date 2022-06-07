@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+	<Target Name="SetSourceRevisionId" BeforeTargets="InitializeSourceControlInformation" Condition="'$(Configuration)' == 'Release'">
+		<Exec Command="git describe --long --always --exclude=*" ConsoleToMSBuild="true" IgnoreExitCode="False">
+			<Output PropertyName="SourceRevisionId" TaskParameter="ConsoleOutput" />
+		</Exec>
+	</Target>
+
 	<PropertyGroup Label="Copyright">
 		<Authors>© 2022 Daniel Giversen</Authors>
 		<Company>Haderslev Kommune – IT og Digitalisering</Company>
@@ -23,7 +29,7 @@
 
 	<PropertyGroup Label="Version">
 		<Version>3.99.1</Version>
-		<VersionSuffix>RC</VersionSuffix>
+		<VersionSuffix>Beta</VersionSuffix>
 		<InformationalVersion Condition="'$(Configuration)' == 'Release'">$(Version)-$(VersionSuffix)+$(SourceRevisionId)</InformationalVersion>
 		<AssemblyVersion>$(Version).1</AssemblyVersion>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
