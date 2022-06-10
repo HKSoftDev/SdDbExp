@@ -141,7 +141,11 @@ public partial class Bizz // Retrieve
 	#endregion
 
 	/// <summary>Retrieves the current domain path</summary><returns>Result as string</returns>
+	#pragma warning disable CS8602
+	#pragma warning disable CA1416
 	protected static string RetrieveCurrentDomainPath() { using DirectoryEntry de = new("LDAP://RootDSE"); return "LDAP://" + de.Properties["defaultNamingContext"][0].ToString(); }
+	#pragma warning restore CS8602 // Converting null literal or possible null value to non-nullable type.
+	#pragma warning restore CA1416
 
 	/// <returns>Element Name from <paramref name="xml"/> as string</returns><param name="xml" />
 	protected static string RetrieveElementNameFromXml(string xml) { using TextReader reader=new StringReader(xml); XDocument doc=XDocument.Load(reader); foreach (XElement xElement in doc.Descendants()) { switch (xElement.Name.ToString()) {
@@ -150,6 +154,7 @@ public partial class Bizz // Retrieve
 		case "GetPerson20111201": return "GetPerson20111201"; case "GetPersonChangedAtDate20111201": return "GetPersonChangedAtDate20111201"; case "GetProfession20080201": return "GetProfession20080201"; default: break; } } return string.Empty; }
 
 	/// <remarks/>
+	#pragma warning disable CS8604
 	protected int RetrieveOldest<T>(T entity1,T entity2) where T : class { if (!entity1.GetType().Equals(entity2.GetType())) throw new InvalidRefException("entity1 and entity2 must have the same type.");
 		string type=typeof(T).Name.ToLower(); return type switch { "contactinformation" => RetrieveOldestContactInformation(entity1 as ContactInformation,entity2 as ContactInformation),
 			"department" => RetrieveOldestDepartment(entity1 as Department,entity2 as Department), "departmentlevelreference" => RetrieveOldestDepartmentLevelReference(entity1 as DepartmentLevelReference,entity2 as DepartmentLevelReference),
@@ -160,6 +165,7 @@ public partial class Bizz // Retrieve
 			"postaladdress" => RetrieveOldestPostalAddress(entity1 as PostalAddress,entity2 as PostalAddress), "profession" => RetrieveOldestProfession(entity1 as Profession,entity2 as Profession),
 			"salaryagreement" => RetrieveOldestSalaryAgreement(entity1 as SalaryAgreement,entity2 as SalaryAgreement), "salarycodegroup" => RetrieveOldestSalaryCodeGroup(entity1 as SalaryCodeGroup,entity2 as SalaryCodeGroup),
 			"workingtime" => RetrieveOldestWorkingTime(entity1 as WorkingTime,entity2 as WorkingTime), _ => throw new InvalidRefException(), }; }
+	#pragma warning restore CS8604
 
 	#region Private
 

@@ -13,7 +13,7 @@ public class Region
   public Region() { }
 
   /// <summary>Initializes a new instance of Region</summary><param name="regId">RegionIdentifier</param><param name="regUuid">RegionUuidIdentifier</param><param name="regName">RegionName</param><param name="insts">Institutions</param>
-  public Region(string regId, string regUuid, string regName, List<WsInstitution>? insts=null) { this.RegionIdentifier=regId; this.RegionUuidIdentifier=regUuid; this.RegionName=regName; this.Institutions=insts; }
+  public Region(string regId, string regUuid, string regName, List<WsInstitution>? insts=null) { this.RegionIdentifier=regId; this.RegionUuidIdentifier=regUuid; this.RegionName=regName; this.Institutions=insts??new(); }
 
   /// <summary>Initializes a new instance of Region accepting data from existing Region</summary><param name="reg" />
   public Region(Region reg) { this.RegionIdentifier=reg.RegionIdentifier; this.RegionUuidIdentifier=reg.RegionUuidIdentifier; this.RegionName=reg.RegionName; this.Institutions=reg.Institutions; }

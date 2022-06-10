@@ -105,7 +105,7 @@ dotnet_diagnostic.CS8602.severity = none
 # CS8603: Possible null reference return.
 dotnet_diagnostic.CS8603.severity = none
 
-# CS8604: Possible null reference for parameter.
+# CS8604: Possible null reference argument.
 dotnet_diagnostic.CS8604.severity = none
 
 # CS8767: Nullability of reference types in type of parameter doesn't match implicitly implemented member (possibly because of nullability attributes).
@@ -238,3 +238,4 @@ dotnet_style_qualification_for_field = false:silent
 dotnet_style_qualification_for_property = false:silent
 dotnet_style_qualification_for_method = false:silent
 dotnet_style_qualification_for_event = false:silent
+

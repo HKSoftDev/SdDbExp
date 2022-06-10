@@ -10,14 +10,24 @@ public partial class Bizz // Check
 	#region Methods
 
 	/// <returns>Result as bool</returns><typeparam name="T" /><param name="entity" />
-	public bool CheckEntityExists<T>(T entity) where T : class => typeof(T).Name.ToLower() switch { "contactinformation" => CheckContactInformationExist(entity as ContactInformation),
-		"department" => CheckDepartmentExist(entity as Department), "departmentlevelreference" => CheckDepartmentLevelReferenceExist(entity as DepartmentLevelReference),
-		"departmentreference" => CheckDepartmentReferenceExist(entity as DepartmentReference), "employment" => CheckEmploymentExist(entity as Employment),
-		"employmentprofession" => CheckEmploymentProfessionExist(entity as EmploymentProfession), "employmentstatus" => CheckEmploymentStatusExist(entity as EmploymentStatus), "institution" => CheckInstitutionExist(entity as Institution),
-		"organization" => CheckOrganizationExist(entity as Organization), "organizationstructure" => CheckOrganizationStructureExist(entity as OrganizationStructure),
-		"person" => CheckPersonExist(entity as Person), "postaladdress" => CheckPostalAddressExist(entity as PostalAddress), "profession" => CheckProfessionExist(entity as Profession),
-		"salaryagreement" => CheckSalaryAgreementExist(entity as SalaryAgreement), "salarycodegroup" => CheckSalaryCodeGroupExist(entity as SalaryCodeGroup),
-		"successfulrun" => CheckSuccessfulRunExist(entity as SuccessfulRun), "workingtime" => CheckWorkingTimeExist(entity as WorkingTime), _ => false, };
+	public bool CheckEntityExists<T>(T entity) where T : class => typeof(T).Name.ToLower() switch { 
+		"contactinformation" => CheckContactInformationExist((entity as ContactInformation)??throw new ArgumentNullException(nameof(entity))),
+		"department" => CheckDepartmentExist((entity as Department)??throw new ArgumentNullException(nameof(entity))), 
+		"departmentlevelreference" => CheckDepartmentLevelReferenceExist((entity as DepartmentLevelReference)??throw new ArgumentNullException(nameof(entity))),
+		"departmentreference" => CheckDepartmentReferenceExist((entity as DepartmentReference)??throw new ArgumentNullException(nameof(entity))), 
+		"employment" => CheckEmploymentExist((entity as Employment)??throw new ArgumentNullException(nameof(entity))),
+		"employmentprofession" => CheckEmploymentProfessionExist((entity as EmploymentProfession)??throw new ArgumentNullException(nameof(entity))),
+		"employmentstatus" => CheckEmploymentStatusExist((entity as EmploymentStatus)??throw new ArgumentNullException(nameof(entity))),
+		"institution" => CheckInstitutionExist((entity as Institution)??throw new ArgumentNullException(nameof(entity))),
+		"organization" => CheckOrganizationExist((entity as Organization)??throw new ArgumentNullException(nameof(entity))),
+		"organizationstructure" => CheckOrganizationStructureExist((entity as OrganizationStructure)??throw new ArgumentNullException(nameof(entity))),
+		"person" => CheckPersonExist((entity as Person)??throw new ArgumentNullException(nameof(entity))), 
+		"postaladdress" => CheckPostalAddressExist((entity as PostalAddress)??throw new ArgumentNullException(nameof(entity))), 
+		"profession" => CheckProfessionExist((entity as Profession)??throw new ArgumentNullException(nameof(entity))),
+		"salaryagreement" => CheckSalaryAgreementExist((entity as SalaryAgreement)??throw new ArgumentNullException(nameof(entity))),
+		"salarycodegroup" => CheckSalaryCodeGroupExist((entity as SalaryCodeGroup)??throw new ArgumentNullException(nameof(entity))),
+		"successfulrun" => CheckSuccessfulRunExist((entity as SuccessfulRun)??throw new ArgumentNullException(nameof(entity))), 
+		"workingtime" => CheckWorkingTimeExist((entity as WorkingTime)??throw new ArgumentNullException(nameof(entity))), _ => false, };
 
 	/// <summary>Checks error at end of run</summary>
 	public void CheckDependencyDataError() { if (Config.DepartmentsNotUpdated<1&&Config.DepartmentLevelReferencesNotUpdated<1&&Config.DepartmentReferencesNotUpdated<1&&Config.InstitutionsNotUpdated<1&&

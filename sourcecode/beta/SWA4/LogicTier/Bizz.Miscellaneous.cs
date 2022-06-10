@@ -42,6 +42,7 @@ public partial class Bizz // Miscellaneous
 		else if (list[i].Mail.IsNullOrWhiteSpace()&&list[i].MobilePhone.IsNullOrWhiteSpace()) list.RemoveAt(i); i--; } Console.WriteLine("- Brugere efter validering: "+list.Count+Environment.NewLine); }
 
 	/// <summary>Searches for all users in AD</summary>
+	#pragma warning disable CA1416
 	protected List<ADUser> SearchAllUsers() { List<ADUser> list=new(); using DirectoryEntry de=new(RetrieveCurrentDomainPath(),Resources.UDCSDUserame,Resources.UDCSDPassword); using DirectorySearcher ds=new(de);
 		ds.PropertiesToLoad.Add("userprincipalname"); ds.PropertiesToLoad.Add("title"); ds.PropertiesToLoad.Add("name"); ds.PropertiesToLoad.Add("displayname"); ds.PropertiesToLoad.Add("employeeid");
 		ds.PropertiesToLoad.Add("employeenumber"); ds.PropertiesToLoad.Add("primarygroupid"); ds.PropertiesToLoad.Add("memberOf"); ds.PropertiesToLoad.Add("initials"); ds.PropertiesToLoad.Add("givenname");
@@ -52,6 +53,7 @@ public partial class Bizz // Miscellaneous
 			sr.RetrievePropertyValue("primarygroupid"),sr.RetrievePropertyValue("memberOf"),sr.RetrievePropertyValue("initials"),sr.RetrievePropertyValue("givenname"),sr.RetrievePropertyValue("sn"),
 			sr.RetrievePropertyValue("mail"),sr.RetrievePropertyValue("mobile"),sr.RetrievePropertyValue("physicaldeliveryofficename"),sr.RetrievePropertyValue("company"),sr.RetrievePropertyValue("department"),
 			sr.RetrievePropertyValue("departmentNumber"), sr.RetrievePropertyValue("distinguishedName"),sr.RetrievePropertyValue("adspath"))); } return list; }
+	#pragma warning restore CA1416
 
 	/// <returns>Trimmed <paramref name="number"/> to 8-digit string</returns><param name="number" />
 	protected string TrimCioPhoneNumber(string number) { string result=string.Empty; if (number != null) { result=number; while (result.Length > 8) { 
@@ -68,10 +70,12 @@ public partial class Bizz // Miscellaneous
 	private static string CurrentMethod([CallerMemberName] string memberName="") => currentMethod+"."+memberName+"()";
 
 	/// <summary>Checks, wether a user is part of of the SD security group</summary>
+	#pragma warning disable CA1416
 	private void Authentication() { if (this.Config.User.IsNullOrWhiteSpace()) this.Config.User=Config.UserName; if (this.Config.User.ToLower().Equals("3in1")||this.Config.User.ToLower().Equals("moch"))
 			this.Config.Authorized=true; else { try { using WindowsIdentity winid=new(this.Config.User); WindowsPrincipal principal=new(winid); this.Config.Authorized=principal.IsInRole("SdDatabase_Gruppe"); }
 			catch (ExpressionException eex) { this.Config.Authorized=false; WriteStringLineToLogFile(Environment.NewLine+"- Authentification Error:"+Environment.NewLine+eex.ToErrorString()+Environment.NewLine+Environment.NewLine); }
 			catch (Exception ex) { this.Config.Authorized=false; WriteStringLineToLogFile(Environment.NewLine+"- Authentification Error:"+Environment.NewLine+ExpressionException.ToErrorString(ex)+Environment.NewLine+Environment.NewLine); } } }
+	#pragma warning restore CA1416
 
 	/// <summary>Interpretes content of request</summary><param name="content" /><exception cref="ArgumentInvalidException" /><exception cref="NullRefException" />
 	private void InterpreteContent(string content) { if (content.IsNullOrWhiteSpace()) throw new ArgumentInvalidException(nameof(content), content,nameof(content)+Error.CantBeEmpty);
@@ -154,8 +158,10 @@ public partial class Bizz // Miscellaneous
 		handler.BeginSend(byteData,0,byteData.Length,0,new AsyncCallback(SendCallback), handler); }
 
 	/// <summary>Sends a CallBack to socket</summary><param name="ar" />
-	private void SendCallback(IAsyncResult ar) { try { Socket handler=(Socket)ar.AsyncState; int bytesSent=handler.EndSend(ar); Console.WriteLine("Sent {0} bytes to client.", bytesSent);
-		handler.Shutdown(SocketShutdown.Both); handler.Close(); } catch (Exception e) { Console.WriteLine(e.ToString()); } }
+	#pragma warning disable CS8600
+	private void SendCallback(IAsyncResult ar) { try { Socket handler=(Socket)ar.AsyncState; int bytesSent=((handler)??throw new ArgumentNullException(nameof(handler))).EndSend(ar);
+		Console.WriteLine("Sent {0} bytes to client.", bytesSent); handler.Shutdown(SocketShutdown.Both); handler.Close(); } catch (Exception e) { Console.WriteLine(e.ToString()); } }
+	#pragma warning restore CS8600
 
 	/// <remarks />
 	private bool SetConfigParams() { try { Config.AllDataRetrieved=true; Config.AllDataDeserialized=true; Config.AllDataCleaned=true; Config.AllDatabaseUpdated=true; return true; } catch (Exception) { return false; } }

@@ -10,15 +10,24 @@ public partial class Bizz // Database Main
 	#region Methods
 
 	/// <returns>Id as int</returns><typeparam name="T" /><param name="entity" /><exception cref="InvalidRefException" />
-	public int CreateInDatabaseWithId<T>(T entity) where T : class => typeof(T).Name switch { "ContactInformation" => CreateContactInformationInDatabaseWithId(entity as ContactInformation),
-		"Department" => CreateDepartmentInDatabaseWithId(entity as Department), "DepartmentLevelReference" => CreateDepartmentLevelReferenceInDatabaseWithId(entity as DepartmentLevelReference),
-		"DepartmentReference" => CreateDepartmentReferenceInDatabaseWithId(entity as DepartmentReference), "Employment" => CreateEmploymentInDatabaseWithId(entity as Employment),
-		"EmploymentProfession" => CreateEmploymentProfessionInDatabaseWithId(entity as EmploymentProfession), "EmploymentStatus" => CreateEmploymentStatusInDatabaseWithId(entity as EmploymentStatus),
-		"Institution" => CreateInstitutionInDatabaseWithId(entity as Institution), "Organization" => CreateOrganizationInDatabaseWithId(entity as Organization),
-		"OrganizationStructure" => CreateOrganizationStructureInDatabaseWithId(entity as OrganizationStructure), "Person" => CreatePersonInDatabaseWithId(entity as Person),
-		"PostalAddress" => CreatePostalAddressInDatabaseWithId(entity as PostalAddress), "Profession" => CreateProfessionInDatabaseWithId(entity as Profession),
-		"SalaryAgreement" => CreateSalaryAgreementInDatabaseWithId(entity as SalaryAgreement), "SalaryCodeGroup" => CreateSalaryCodeGroupInDatabaseWithId(entity as SalaryCodeGroup),
-		"SuccessfulRun" => CreateSuccessfulRunInDatabaseWithId(entity as SuccessfulRun), "WorkingTime" => CreateWorkingTimeInDatabaseWithId(entity as WorkingTime),
+	public int CreateInDatabaseWithId<T>(T entity) where T : class => typeof(T).Name switch { 
+		"ContactInformation" => CreateContactInformationInDatabaseWithId((entity as ContactInformation)??throw new ArgumentNullException(nameof(entity))),
+		"Department" => CreateDepartmentInDatabaseWithId((entity as Department)??throw new ArgumentNullException(nameof(entity))),
+		"DepartmentLevelReference" => CreateDepartmentLevelReferenceInDatabaseWithId((entity as DepartmentLevelReference)??throw new ArgumentNullException(nameof(entity))),
+		"DepartmentReference" => CreateDepartmentReferenceInDatabaseWithId((entity as DepartmentReference)??throw new ArgumentNullException(nameof(entity))),
+		"Employment" => CreateEmploymentInDatabaseWithId((entity as Employment)??throw new ArgumentNullException(nameof(entity))),
+		"EmploymentProfession" => CreateEmploymentProfessionInDatabaseWithId((entity as EmploymentProfession)??throw new ArgumentNullException(nameof(entity))),
+		"EmploymentStatus" => CreateEmploymentStatusInDatabaseWithId((entity as EmploymentStatus)??throw new ArgumentNullException(nameof(entity))),
+		"Institution" => CreateInstitutionInDatabaseWithId((entity as Institution)??throw new ArgumentNullException(nameof(entity))),
+		"Organization" => CreateOrganizationInDatabaseWithId((entity as Organization)??throw new ArgumentNullException(nameof(entity))),
+		"OrganizationStructure" => CreateOrganizationStructureInDatabaseWithId((entity as OrganizationStructure)??throw new ArgumentNullException(nameof(entity))),
+		"Person" => CreatePersonInDatabaseWithId((entity as Person)??throw new ArgumentNullException(nameof(entity))),
+		"PostalAddress" => CreatePostalAddressInDatabaseWithId((entity as PostalAddress)??throw new ArgumentNullException(nameof(entity))),
+		"Profession" => CreateProfessionInDatabaseWithId((entity as Profession)??throw new ArgumentNullException(nameof(entity))),
+		"SalaryAgreement" => CreateSalaryAgreementInDatabaseWithId((entity as SalaryAgreement)??throw new ArgumentNullException(nameof(entity))),
+		"SalaryCodeGroup" => CreateSalaryCodeGroupInDatabaseWithId((entity as SalaryCodeGroup)??throw new ArgumentNullException(nameof(entity))),
+		"SuccessfulRun" => CreateSuccessfulRunInDatabaseWithId((entity as SuccessfulRun)??throw new ArgumentNullException(nameof(entity))),
+		"WorkingTime" => CreateWorkingTimeInDatabaseWithId((entity as WorkingTime)??throw new ArgumentNullException(nameof(entity))),
 		_ => throw new InvalidRefException(typeof(T).Name,typeof(T),typeof(T).Name+Error.InvTypeParam), };
 
 	/// <remarks />
@@ -67,6 +76,7 @@ public partial class Bizz // Database Main
 		foreach (EmploymentStatus item in GetList<EmploymentStatus>()) if (!result.ContainsKey(item.TKey)) result.Add(item.TKey,item); Garbage.Collect(); return result; }
 
 	/// <returns>Result as Dictionary{int,Institution} ordered after database Id</returns>
+	#pragma warning disable CS8604
 	protected Dictionary<int,T> GetIdDict<T>() where T : class { Dictionary<int,T> result = new(); switch(typeof(T).Name.ToLower()) {
 		case "contactinformation": foreach (ContactInformation item in GetList<ContactInformation>()) if (!result.ContainsKey(item.Id)) result.Add(item.Id,item as T); break;
 		case "department": foreach (Department item in GetList<Department>()) if (!result.ContainsKey(item.Id)) result.Add(item.Id,item as T); break;
@@ -86,6 +96,7 @@ public partial class Bizz // Database Main
 		case "successfulrun": foreach (SuccessfulRun item in GetList<SuccessfulRun>()) if (!result.ContainsKey(item.Id)) result.Add(item.Id,item as T); break;
 		case "workingtime": foreach (WorkingTime item in GetList<WorkingTime>()) if (!result.ContainsKey(item.Id)) result.Add(item.Id,item as T); break;
 		default: throw new InvalidRefException(typeof(T).Name+Error.InvTypeParam);	} return result; }
+	#pragma warning restore CS8604
 
 	/// <returns>Result as Dictionary{string,T} ordered after TKey</returns>
 	protected Dictionary<string,Institution> GetInstitutionDict() { Dictionary<string,Institution> result = new(); foreach (Institution item in GetList<Institution>())

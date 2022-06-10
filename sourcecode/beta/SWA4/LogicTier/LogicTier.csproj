@@ -52,7 +52,7 @@
 		<WarningLevel>4</WarningLevel>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Build Debug" Condition="'$(Configuration)' == 'Debug'">

@@ -8,6 +8,10 @@ namespace DataTier;
 public class EFExtension
 {
 
+	#pragma warning disable CS8600
+	#pragma warning disable CS8603
+	#pragma warning disable CS8602
+	#pragma warning disable IDE0059
 	#region Methods
 
 	/// <summary>Deletes an entry from Database</summary><typeparam name="T" /><param name="entity" />
@@ -95,6 +99,7 @@ public class EFExtension
 			if (timeList.Count>=1) return timeList[0] as T; else throw new EmptyRefException(nameof(type),entity as WorkingTime,Error.DbNonExist);
 		default: throw new InvalidRefException(nameof(type),type,type+Error.InvTypeParam); } }
 
+
 	/// <summary>Deletes an entry from Database</summary><typeparam name="T" />
 	public static List<T> SelectListFromDatabase<T>() where T : class { using EFContext dbo=new(); return typeof(T).Name.ToLower() switch {
 		"contactinformation" => dbo.ContactInformationList.ToListAsync().Result as List<T>, "department" => dbo.DepartmentList.ToListAsync().Result as List<T>,
@@ -156,5 +161,9 @@ public class EFExtension
 		_ => throw new InvalidRefException(nameof(type),type,type+Error.InvTypeParam), }; }
 
 	#endregion
+	#pragma warning restore CS8600
+	#pragma warning restore CS8602
+	#pragma warning restore CS8603
+	#pragma warning restore IDE0059
 
 }

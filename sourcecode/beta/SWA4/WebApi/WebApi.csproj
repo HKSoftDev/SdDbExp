@@ -25,6 +25,7 @@
 		<ErrorReport>prompt</ErrorReport>
 		<Configurations>Debug;Release</Configurations>
 		<Nullable>enable</Nullable>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Label="Version">

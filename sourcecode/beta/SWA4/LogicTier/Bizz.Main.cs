@@ -11,6 +11,8 @@ public partial class Bizz // Main
 
 
 	/// <summary>Accept a CallBack on socket</summary><param name="ar" />
+	#pragma warning disable CS8600
+	#pragma warning disable CS8602
 	public void AcceptCallback(IAsyncResult ar)
 	{
 		// Signal the main thread to continue.  
@@ -41,16 +43,15 @@ public partial class Bizz // Main
 
 	/// <summary>Displays or logs Config.xml error message</summary><param name="args" /><param name="exception" />
 	public void HandleError(string[] args,string exception) { string log = "- Log for "+Config.AppName+" running in "+Config.RunMode+@" mode "+Environment.NewLine+"- Log initiated "+DateTime.Now.ToString("r")+" "+
-			Environment.NewLine+"- Arguments: "; Parallel.ForEach(args,item => log+=item+@","); log=log.TrimEnd(Convert.ToChar(@",")); log+=Environment.NewLine+"- An unhandled run error occurred:"+Environment.NewLine+exception+
-			Environment.NewLine+ "- "+CurrentMethod()+" line "+CurrentLineNumber()+Environment.NewLine+Environment.NewLine+"- Log concluded "+DateTime.Now.ToString("r")+" "; WriteStringLineToLogFile(log); MailError(); }
+		Environment.NewLine+"- Arguments: "; Parallel.ForEach(args,item => log+=item+@","); log=log.TrimEnd(Convert.ToChar(@",")); log+=Environment.NewLine+"- An unhandled run error occurred:"+Environment.NewLine+exception+
+		Environment.NewLine+ "- "+CurrentMethod()+" line "+CurrentLineNumber()+Environment.NewLine+Environment.NewLine+"- Log concluded "+DateTime.Now.ToString("r")+" "; WriteStringLineToLogFile(log); MailError(); }
 
 	/// <summary>Reads a CallBack from socket</summary><param name="ar" />
 	public void ReadCallback(IAsyncResult ar)
 	{
 		string content = string.Empty;
 
-		// Retrieve the state object and the handler socket  
-		// from the asynchronous state object.  
+		// Retrieve the state object and the handler socket from the asynchronous state object.  
 		StateObject state=(StateObject)ar.AsyncState;
 
 		Socket handler=state.WorkSocket;
@@ -88,6 +89,8 @@ public partial class Bizz // Main
 		}
 
 	}
+	#pragma warning restore CS8600
+	#pragma warning restore CS8602
 
 	#region S
 
