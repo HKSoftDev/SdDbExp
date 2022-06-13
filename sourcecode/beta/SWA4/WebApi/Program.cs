@@ -12,13 +12,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<EFContext>(options => options.UseSqlServer(WebApi.Resources.ConnectionString));
 builder.Services.AddSwaggerGen(c => { c.SwaggerDoc("v4", new() { Title="SdWebApi", Version="v4" }); });
 
-builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate(options => { options.EnableLdap(settings => { settings.Domain= "intern.udcit.dk";
-  settings.MachineAccountName=WebApi.Resources.ADUserName; settings.MachineAccountPassword=WebApi.Resources.ADPassword; }); });
+//builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
 
-builder.Services.AddAuthorization(options => { options.AddPolicy("ADRoleOnly", policy => policy.RequireRole("SdDatabase_Gruppe")); });
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate(options => { options.EnableLdap(settings => { settings.Domain=
+	"intern.udcit.dk"; settings.MachineAccountName = WebApi.Resources.ADUserName; settings.MachineAccountPassword = WebApi.Resources.ADPassword; }); });
 
-//builder.Services.AddControllersWithViews(options => { AuthorizationPolicy? policy=new AuthorizationPolicyBuilder().RequireAuthenticatedUser().RequireClaim("groups", "SdDatabase_Gruppe").Build();
-//  options.Filters.Add(new AuthorizeFilter(policy)); });
+//builder.Services.AddAuthorization(options => { options.AddPolicy("ADRoleOnly", policy => policy.RequireRole("SdDatabase_Gruppe")); });
+
+builder.Services.AddControllersWithViews(options => { AuthorizationPolicy? policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().RequireClaim("groups", "SdDatabase_Gruppe").Build();
+	options.Filters.Add(new AuthorizeFilter(policy)); });
 
 WebApplication? app=builder.Build();
 
