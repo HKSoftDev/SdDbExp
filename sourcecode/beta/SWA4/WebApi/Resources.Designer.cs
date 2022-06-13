@@ -61,6 +61,15 @@ namespace WebApi {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to intern.udcit.dk.
+        /// </summary>
+        internal static string ADDomain {
+            get {
+                return ResourceManager.GetString("ADDomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to dlfn37f433#F3f3d3cdevvw2d.
         /// </summary>
         internal static string ADPassword {
