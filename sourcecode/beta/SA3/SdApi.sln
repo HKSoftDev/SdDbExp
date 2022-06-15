@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03937758-C6B1-431E-B78B-80B73DFB0875}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		LICENSE.txt = LICENSE.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTier", "DataTier\DataTier.csproj", "{EECC9C65-72E6-4333-BD22-DB64CDF115DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicTier", "LogicTier\LogicTier.csproj", "{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{D1A9C08A-D9BC-48D2-9A5C-99584720A020}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SdAccess", "SdAccess\SdAccess.csproj", "{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SdAccess64", "SdAccess64\SdAccess64.vdproj", "{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|win10-x64 = Debug|win10-x64
+		Release|Any CPU = Release|Any CPU
+		Release|win10-x64 = Release|win10-x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Debug|Any CPU.ActiveCfg = Debug|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Debug|Any CPU.Build.0 = Debug|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Debug|win10-x64.ActiveCfg = Debug|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Debug|win10-x64.Build.0 = Debug|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Release|Any CPU.ActiveCfg = Release|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Release|Any CPU.Build.0 = Release|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Release|win10-x64.ActiveCfg = Release|win10-x64
+		{EECC9C65-72E6-4333-BD22-DB64CDF115DE}.Release|win10-x64.Build.0 = Release|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Debug|Any CPU.ActiveCfg = Debug|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Debug|Any CPU.Build.0 = Debug|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Debug|win10-x64.ActiveCfg = Debug|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Debug|win10-x64.Build.0 = Debug|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Release|Any CPU.ActiveCfg = Release|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Release|Any CPU.Build.0 = Release|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Release|win10-x64.ActiveCfg = Release|win10-x64
+		{B8C3B3C7-C5A2-4E1E-B689-41A270BE7D75}.Release|win10-x64.Build.0 = Release|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Debug|Any CPU.ActiveCfg = Debug|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Debug|Any CPU.Build.0 = Debug|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Debug|win10-x64.ActiveCfg = Debug|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Debug|win10-x64.Build.0 = Debug|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Release|Any CPU.ActiveCfg = Release|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Release|Any CPU.Build.0 = Release|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Release|win10-x64.ActiveCfg = Release|win10-x64
+		{D1A9C08A-D9BC-48D2-9A5C-99584720A020}.Release|win10-x64.Build.0 = Release|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Debug|Any CPU.ActiveCfg = Debug|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Debug|Any CPU.Build.0 = Debug|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Debug|win10-x64.ActiveCfg = Debug|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Debug|win10-x64.Build.0 = Debug|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Release|Any CPU.ActiveCfg = Release|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Release|Any CPU.Build.0 = Release|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Release|win10-x64.ActiveCfg = Release|win10-x64
+		{3F9AC5DD-C41C-4283-9B33-5B04C4D24847}.Release|win10-x64.Build.0 = Release|win10-x64
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Debug|Any CPU.ActiveCfg = Debug
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Debug|Any CPU.Build.0 = Debug
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Debug|win10-x64.ActiveCfg = Debug
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Release|Any CPU.ActiveCfg = Release
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Release|Any CPU.Build.0 = Release
+		{9D82C8D2-7FC1-4534-9EC1-4BEA997F34FA}.Release|win10-x64.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CA26782-2703-4B1E-A050-4F84FB8B9C4A}
+	EndGlobalSection
+EndGlobal

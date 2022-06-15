@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SdAccess</name>
+    </assembly>
+    <members>
+        <member name="T:SdAccess.App">
+            <summary>Interaction logic for App.xaml</summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:SdAccess.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:SdAccess.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:SdAccess.MainWindow">
+            <summary>Interaction logic for MainWindow.xaml</summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:SdAccess.MainWindow.#ctor">
+            <summary>The Main Window of the SdApi</summary>
+        </member>
+        <member name="P:SdAccess.MainWindow.APIs">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.Formats">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.Silos">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.API">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.Format">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.PassWord">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.Roles">
+            <remarks />
+        </member>
+        <member name="P:SdAccess.MainWindow.Silo">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.ButtonSend_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks /><param name="sender" /><param name="e" />
+        </member>
+        <member name="M:SdAccess.MainWindow.ButtonStopServer_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks /><param name="sender" /><param name="e" />
+        </member>
+        <member name="M:SdAccess.MainWindow.CheckBoxUuid_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.CheckBoxUuid_Unchecked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.ComboBoxApi_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.ComboBoxFormat_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.ComboBoxSilo_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.RadioButtonActive_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.RadioButtonInactive_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.RadioButtonAll_Checked(System.Object,System.Windows.RoutedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.TxtRolesInput_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.TxtPassWordInput_DataContextChanged(System.Object,System.Windows.DependencyPropertyChangedEventArgs)">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.ResetGui">
+            <summary>Resets MainWindow form for new request</summary>
+        </member>
+        <member name="M:SdAccess.MainWindow.SetGuiDefault">
+            <remarks />
+        </member>
+        <member name="M:SdAccess.MainWindow.SetGuiGetSpecial(System.Boolean)">
+            <remarks /> <param name="moch" />
+        </member>
+        <member name="M:SdAccess.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

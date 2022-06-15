@@ -1,0 +1,546 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LogicTier</name>
+    </assembly>
+    <members>
+        <member name="T:LogicTier.AsynchronousClient">
+            <remarks />  
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.#ctor">
+            <summary>Initiates an empty instance of AsynchronousClient</summary>
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.#ctor(LogicTier.Bizz)">
+            <summary>Initiates a new instance of AsynchronousClient</summary><param name="bizz" />
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.Connect">
+            <summary>Connect to a remote device</summary>
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.ConnectCallback(System.IAsyncResult)">
+            <remarks /><param name="ar" />
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.Receive(System.Net.Sockets.Socket)">
+            <remarks /><param name="client" />
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.ReceiveCallback(System.IAsyncResult)">
+            <remarks /><param name="ar" />
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.Send(System.Net.Sockets.Socket,System.String)">
+            <summary>Sends data to socket</summary><param name="client" /><param name="data" />
+        </member>
+        <member name="M:LogicTier.AsynchronousClient.SendCallback(System.IAsyncResult)">
+            <remarks /><param name="ar" />
+        </member>
+        <member name="T:LogicTier.Bizz">
+            <remarks/>
+            <remarks/>
+            <remarks/>
+            <remarks />
+            <remarks/>
+            <remarks/>
+            <remarks/>
+            <remarks/>
+            <remarks/>
+            <remarks/>
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.Bizz.CheckEntityExists``1(``0)">
+            <returns>Result as bool</returns><typeparam name="T" /><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckContactInformation(Repository.ADUser,Repository.ContactInformation)">
+            <summary>Checks content of<paramref name="info"/></summary><param name="user" /><param name="info" /><exception cref="T:Repository.ArgumentEmptyException" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckContactInformationExist(Repository.ContactInformation)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckDepartmentExist(Repository.Department)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckDepartmentLevelReferenceExist(Repository.DepartmentLevelReference)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckDepartmentReferenceExist(Repository.DepartmentReference)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckEmploymentExist(Repository.Employment)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckEmploymentProfessionExist(Repository.EmploymentProfession)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckEmploymentStatusExist(Repository.EmploymentStatus)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckInstitutionExist(Repository.Institution)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckOrganizationExist(Repository.Organization)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckOrganizationStructureExist(Repository.OrganizationStructure)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckPersonExist(Repository.Person)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckPostalAddressExist(Repository.PostalAddress)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckProfessionExist(Repository.Profession)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckSalaryAgreementExist(Repository.SalaryAgreement)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckSalaryCodeGroupExist(Repository.SalaryCodeGroup)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckSuccessfulRunExist(Repository.SuccessfulRun)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckWorkingTimeExist(Repository.WorkingTime)">
+            <returns>Result as bool</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.CheckErrors">
+            <summary>Check Errors if any error stores error message in PageData</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.CheckPhone(System.String,Repository.ContactInformation)">
+            <summary>Checks wether <paramref name="phone"/> exists in <paramref name="info"/></summary><param name="phone" /><param name="info" /><returns>Result as bool</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.CheckMail(System.String,Repository.ContactInformation)">
+            <summary>Checks wether <paramref name="mail"/> exists in <paramref name="info"/></summary><param name="mail" /><param name="info" /><returns>Result as bool</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.CloneEntity``1(``0)">
+            <returns>Clone of <paramref name="obj"/> as T</returns><typeparam name="T" /><param name="obj" />
+        </member>
+        <member name="M:LogicTier.Bizz.CloneList``1(System.Collections.Generic.List{``0})">
+            <returns>Clone of <paramref name="list"/></returns><typeparam name="T" /><param name="list" />
+        </member>
+        <member name="M:LogicTier.Bizz.ConvertApiEntityListToCsvString``1(System.Collections.Generic.List{``0})">
+            <returns><paramref name="list"/> as csv string</returns><typeparam name="T" /><param name="list" />
+        </member>
+        <member name="M:LogicTier.Bizz.ConvertApiEntityListToJsonString``1(System.Collections.Generic.List{``0})">
+            <returns><paramref name="list"/> as a json string</returns><typeparam name="T" /><param name="list" />
+        </member>
+        <member name="M:LogicTier.Bizz.ConvertApiEntityListToXmlString``1(System.Collections.Generic.List{``0})">
+            <returns><paramref name="list"/> as an xml string</returns><typeparam name="T" /><param name="list" />
+        </member>
+        <member name="M:LogicTier.Bizz.ConvertXmlStringToJsonString(System.String)">
+            <returns><paramref name="xmlString"/> as json string</returns><param name="xmlString" />
+        </member>
+        <member name="M:LogicTier.Bizz.Create3in1ApiUri">
+            <summary>Creates Config.Uri for 3IN1 API</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.CreateApiUri">
+            <summary>Creates Config.Uri for API</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.CreateMochApiUri">
+            <summary>Creates Config.Uri for MOCH API</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.UpdateOrCreateInDatabase``1(``0)">
+            <returns><paramref name="entity"/> updated or created into datatabase</returns><typeparam name="T" /><param name="entity" /><exception cref="T:Repository.InvalidRefException" />
+        </member>
+        <member name="M:LogicTier.Bizz.UpdateSuccessfulRunInDatabase(System.String,System.String)">
+            <returns>Result as bool</returns><param name="institutionId" /><param name="sdApi" />
+        </member>
+        <member name="M:LogicTier.Bizz.GetContactInformationDict">
+            <returns>Result as Dictionary{string,ContactInformation} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetDepartmentDict">
+            <returns>Result as Dictionary{string,Department} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetDepartmentLevelReferenceDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetDepartmentReferenceDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetEmploymentDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetEmploymentProfessionDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetEmploymentStatusDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetIdDict``1">
+            <returns>Result as Dictionary{int,Institution} ordered after database Id</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetInstitutionDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetInstitutionIdDict">
+            <returns>Result as Dictionary{string,Institution} ordered after InstitutionIdentifier</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetOrganizationDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetOrganizationStructureDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetPersonDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetPostalAddressDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetProfessionDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetSalaryAgreementDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetSalaryCodeGroupDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetSuccessfulRunDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetViewKantineDict">
+            <returns>Result as Dictionary{string,ViewKantine} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetWorkingTimeDict">
+            <returns>Result as Dictionary{string,T} ordered after TKey</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetList``1">
+            <returns>Result as List{T}</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetView``1">
+            <returns>Result as List{T}</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.GetViewKantineList">
+            <returns>Result as List{T}</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveContactInformation(Repository.ContactInformation)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartment(Repository.Department)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartmentLevelReference(Repository.DepartmentLevelReference)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartmentReference(Repository.DepartmentReference)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmployment(Repository.Employment)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmploymentProfession(Repository.EmploymentProfession)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmploymentStatus(Repository.EmploymentStatus)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveInstitution(Repository.Institution)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveInstitution(System.String)">
+            <returns>Requested entity</returns><param name="institutionId" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveOrganization(Repository.Organization)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveOrganizationStructure(Repository.OrganizationStructure)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrievePerson(Repository.Person)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrievePostalAddress(Repository.PostalAddress)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveProfession(Repository.Profession)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSalaryAgreement(Repository.SalaryAgreement)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSalaryCodeGroup(Repository.SalaryCodeGroup)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSuccessfulRun(Repository.SuccessfulRun)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveWorkingTime(Repository.WorkingTime)">
+            <returns>Requested entity</returns><param name="entity" />
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveContactInformationId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartmentId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartmentLevelReferenceId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveDepartmentReferenceId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmploymentId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmploymentProfessionId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveEmploymentStatusId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveInstitutionId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveOrganizationId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveOrganizationStructureId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrievePersonId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrievePostalAddressId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveProfessionId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSalaryAgreementId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSalaryCodeGroupId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveSuccessfulRunId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveWorkingTimeId">
+            <returns>Id of a recently created entity as int</returns>
+        </member>
+        <member name="F:LogicTier.Bizz.config">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.Bizz.#ctor">
+            <remarks/>
+        </member>
+        <member name="P:LogicTier.Bizz.Client">
+            <remarks />
+        </member>
+        <member name="P:LogicTier.Bizz.Config">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.Bizz.CommunicateWithServer">
+            <summary>Communicates with server and retrieves Config.ResponseString"/>.
+            </summary>
+        </member>
+        <member name="M:LogicTier.Bizz.ResetFields">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.SaveResponse">
+            <summary>Saves Config.ResponseString to disc</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.SaveToFile">
+            <summary>Saves Config.ResponseString to disc</summary><returns>Result as bool</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.SaveResponseStringToFile">
+            <returns>Result as bool</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.ShutdownServer">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.Bizz.WriteStringLineToLogFile(System.String)">
+            <returns>Result as bool</returns><param name="lineContent" />
+        </member>
+        <member name="M:LogicTier.Bizz.CurrentLineNumber(System.Int32)">
+            <returns>Current line number as int</returns><param name="lineNumber" />
+        </member>
+        <member name="M:LogicTier.Bizz.CurrentMethod(System.String)">
+            <returns>Current method name as string</returns><param name="memberName" />
+        </member>
+        <member name="M:LogicTier.Bizz.Authentication">
+            <summary>Checks, wether a user is part of of the SD security group</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.ProcessResponce">
+            <summary>Processes the responce to request</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.ProcessContent">
+            <summary>Processes content of request</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.ProcessEntityList``1">
+            <summary>Proces result from Database</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveCurrentDomainPath">
+            <summary>Retrieves the current domain path</summary><returns>Result as string</returns>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveFromDate(System.String)">
+            <summary>Sets Fromdate for RunMode</summary>
+        </member>
+        <member name="M:LogicTier.Bizz.RetrieveInstitutionUuidIdentifier(Repository.ADUser)">
+            <remarks /><param name="user" />
+        </member>
+        <member name="T:LogicTier.ExtensionMethods">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.ExtensionMethods.IsNullOrWhiteSpace(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:LogicTier.ExtensionMethods.RetrievePropertyValue(System.DirectoryServices.SearchResult,System.String)">
+            <returns>Property value as string</returns><param name="sr">SearchResult</param><param name="propertyName">string</param>
+        </member>
+        <member name="T:LogicTier.Garbage">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.Garbage.Collect">
+            <remarks />
+        </member>
+        <member name="T:LogicTier.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.ConnectionString">
+            <summary>
+              Looks up a localized string similar to Data Source=udcsql2012;Initial Catalog=SD;User ID=sd;Password=kfe73fmf3F9f21dC;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;MultipleActiveResultSets=True.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.CsvPath">
+            <summary>
+              Looks up a localized string similar to C:\CSV\.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.DataSetsPath">
+            <summary>
+              Looks up a localized string similar to C:\Datasets\.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.ErrorPath">
+            <summary>
+              Looks up a localized string similar to C:\Errors\.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.FutureDate">
+            <summary>
+              Looks up a localized string similar to 9999-12-31.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetDepartmentAction">
+            <summary>
+              Looks up a localized string similar to GetDepartment20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetEmploymentAction">
+            <summary>
+              Looks up a localized string similar to GetEmployment20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetEmploymentChangedAction">
+            <summary>
+              Looks up a localized string similar to GetEmploymentChanged20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetEmploymentChangedAtDateAction">
+            <summary>
+              Looks up a localized string similar to GetEmploymentChangedAtDate20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetInstitutionAction">
+            <summary>
+              Looks up a localized string similar to GetInstitution20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetOrganizationAction">
+            <summary>
+              Looks up a localized string similar to GetOrganization20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetPersonAction">
+            <summary>
+              Looks up a localized string similar to GetPerson20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetPersonChangedAtDateAction">
+            <summary>
+              Looks up a localized string similar to GetPersonChangedAtDate20111201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.GetProfessionAction">
+            <summary>
+              Looks up a localized string similar to GetProfession20080201.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.LogsPath">
+            <summary>
+              Looks up a localized string similar to C:\Logs\.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.OldDate">
+            <summary>
+              Looks up a localized string similar to 2010-01-01.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.ResourcesPath">
+            <summary>
+              Looks up a localized string similar to C:\Resources\.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.SDWSPassword">
+            <summary>
+              Looks up a localized string similar to up4ne43u.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.SDWSUsername">
+            <summary>
+              Looks up a localized string similar to sysyshb01.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.UDCSDPassword">
+            <summary>
+              Looks up a localized string similar to dlfn37f433#F3f3d3cdevvw2d.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.UDCSDUserame">
+            <summary>
+              Looks up a localized string similar to service_udcsd.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.WebServiceCachePath">
+            <summary>
+              Looks up a localized string similar to WSCache.
+            </summary>
+        </member>
+        <member name="P:LogicTier.Resources.WebServiceUri">
+            <summary>
+              Looks up a localized string similar to https://service.sd.dk/sdws/.
+            </summary>
+        </member>
+        <member name="T:LogicTier.StateObject">
+            <remarks />
+        </member>
+        <member name="M:LogicTier.StateObject.#ctor">
+            <summary>Initializes an instance of StateObject</summary>
+        </member>
+        <member name="P:LogicTier.StateObject.Buffer">
+            <remarks />
+        </member>
+        <member name="P:LogicTier.StateObject.BufferSize">
+            <remarks />
+        </member>
+        <member name="P:LogicTier.StateObject.Sb">
+            <remarks />
+        </member>
+        <member name="P:LogicTier.StateObject.WorkSocket">
+            <remarks />
+        </member>
+    </members>
+</doc>
